@@ -386,6 +386,7 @@
 "Assets/Photon/PhotonLibs/WebSocket/SocketWebTcp.cs"
 "Assets/Photon/PhotonLibs/WebSocket/WebSocket.cs"
 "Assets/Photon/PhotonRealtime/Demos/DemoLoadBalancing/ConnectAndJoinRandomLb.cs"
+"Assets/Script/ConnectServer.cs"
 "Assets/Script/NotificationManager.cs"
 "Assets/Script/PhotonSetting.cs"
 -langversion:9.0

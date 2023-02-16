@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class PhotonSetting : MonoBehaviourPunCallbacks
 {
     [SerializeField] InputField email;
+    [SerializeField] InputField userID;
     [SerializeField] InputField password;
   
     public void LoginSuccess(LoginResult result)
@@ -17,6 +18,8 @@ public class PhotonSetting : MonoBehaviourPunCallbacks
 
         PhotonNetwork.GameVersion = "1.0f";
 
+        PhotonNetwork.NickName = PlayerPrefs.GetString("Name");
+   
         PhotonNetwork.LoadLevel("Photon Lobby");
     }
 
@@ -55,8 +58,11 @@ public class PhotonSetting : MonoBehaviourPunCallbacks
         var request = new RegisterPlayFabUserRequest
         {
             Email = email.text,
-            Password = password.text
+            Password = password.text,
+            Username = userID.text     
         };
+
+        PlayerPrefs.SetString("Name", userID.text);
 
         PlayFabClientAPI.RegisterPlayFabUser
         (
