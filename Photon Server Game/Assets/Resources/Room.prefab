@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8098226489422886795}
   - component: {fileID: 5707032827195602752}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Information Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,10 +68,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
+    m_FontSize: 20
+    m_FontStyle: 3
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -79,7 +79,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!1 &4583725397340523912
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,7 +202,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1780870879640047884}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9127592937256048514}
+        m_TargetAssemblyTypeName: Information, Assembly-CSharp
+        m_MethodName: OnClickJoinRoom
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &9127592937256048514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,4 +227,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6905c78abffabcf449566606461911d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomData: {fileID: 0}
+  roomData: {fileID: 5707032827195602752}
