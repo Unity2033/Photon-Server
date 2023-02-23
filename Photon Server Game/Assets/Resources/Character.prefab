@@ -2836,6 +2836,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcb1502a65fc2c40baf369c89058cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  angleSpeed: 100
+  direction: {x: 0, y: 0, z: 0}
+  speed: 5
+  mouseX: 0
+  health: 100
+  temporaryCamera: {fileID: 4728721957222510989}
 --- !u!114 &8262190333257479283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2855,6 +2861,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
+  - {fileID: 8837970533387773446}
   - {fileID: 300296541050804745}
   - {fileID: 1174284421296767709}
   sceneViewId: 0

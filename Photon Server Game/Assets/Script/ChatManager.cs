@@ -31,6 +31,6 @@ public class ChatManager : MonoBehaviourPunCallbacks
 
         input.ActivateInputField();
 
-        input.text = null;
+        input.text = "";
     }
 }
