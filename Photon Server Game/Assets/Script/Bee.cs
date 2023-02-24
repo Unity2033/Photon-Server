@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,11 +7,14 @@ public class Bee : MonoBehaviour
 {
     private Vector3 direction;
     private GameObject target;
-    private float speed = 0.1f;
+    private float speed = 5.0f;
 
     void Start()
     {
-        target = GameObject.Find("Character(Clone)");
+        
+        target = GameObject.FindGameObjectWithTag("Player");
+
+        Debug.Log(target);
 
         direction = target.transform.position - transform.position;
         transform.LookAt(target.transform);
