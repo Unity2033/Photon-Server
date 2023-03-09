@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scene/Photon Setting.unity
+- path: Assets/Scene/Photon Lobby.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
