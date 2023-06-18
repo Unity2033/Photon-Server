@@ -61,31 +61,16 @@ public class PhotonSetting : MonoBehaviourPunCallbacks
 
     public void LoginFailure(PlayFabError error)
     {
-        NotificationManager.NotificationWindow
-        (
-            "Login failed",
-            "There are currently no accounts registered on the server. " +
-            "\n\n Please enter your ID and password correctly." 
-        );
+        NotificationManager.NotificationWindow(error.ToString());
     }
 
     public void SignUpSuccess(RegisterPlayFabUserResult result)
     {
-        NotificationManager.NotificationWindow
-        (
-            "Membership successful",
-            "Congratulations on becoming a member." +
-            "\n\n Your email account has been registered on the game server."
-        );
+        NotificationManager.NotificationWindow(result.ToString()); 
     }
 
     public void SignUpFailure(PlayFabError error)
     {
-        NotificationManager.NotificationWindow
-        (
-            "Failed to Sign Up",
-            "Membership registration failed due to a current server error." +
-            "\n\n Please try to register as a member again."
-        );
+        NotificationManager.NotificationWindow(error.ToString());
     }
 }

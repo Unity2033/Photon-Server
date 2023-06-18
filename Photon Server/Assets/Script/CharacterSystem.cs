@@ -1,8 +1,11 @@
 using Photon.Pun;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterSystem : MonoBehaviourPun, IPunObservable
 {
+    [SerializeField] Text nickName;
+
     [SerializeField] float angleSpeed;
     [SerializeField] Vector3 direction;
     [SerializeField] float speed = 5.0f;
@@ -11,16 +14,16 @@ public class CharacterSystem : MonoBehaviourPun, IPunObservable
     [SerializeField] float health = 100;
     [SerializeField] Camera temporaryCamera;
 
+
     void Awake()
     {    
-        // OnPhotonSerializeView 초당 호출하는 수
-        PhotonNetwork.SerializationRate = 10;
+        nickName.text = photonView.Owner.NickName;
     }
 
     private void Start()
     {
         // 현재 플레이어가 나 자신이라면 
-        if(photonView.IsMine)
+        if (photonView.IsMine)
         {
             Camera.main.gameObject.SetActive(false);
         }
@@ -34,13 +37,11 @@ public class CharacterSystem : MonoBehaviourPun, IPunObservable
     void Update()
     {
         if (!photonView.IsMine) return;
-        
-        direction = new Vector3
-        (
-            Input.GetAxisRaw("Horizontal"), 0,  Input.GetAxisRaw("Vertical")
-        );
 
-        transform.Translate(direction.normalized * speed * Time.deltaTime);
+        direction.x = Input.GetAxisRaw("Horizontal");
+        direction.z = Input.GetAxisRaw("Vertical");
+
+        transform.position += transform.TransformDirection(direction).normalized * speed * Time.deltaTime;
 
         mouseX += Input.GetAxis("Mouse X") * angleSpeed * Time.deltaTime;
 
@@ -67,7 +68,6 @@ public class CharacterSystem : MonoBehaviourPun, IPunObservable
         if(other.gameObject.CompareTag("Bee"))
         {
             PhotonView view = other.gameObject.GetComponent<PhotonView>();
-            StartCoroutine(temporaryCamera.GetComponent<CameraShake>().Shake(0.5f, 0.25f));
 
             if (view.IsMine)
             {

@@ -1,6 +1,7 @@
 using UnityEngine;
 using Photon.Pun;
 using System.Collections;
+using Photon.Realtime;
 
 public class GameManager : MonoBehaviourPunCallbacks
 {
@@ -25,21 +26,6 @@ public class GameManager : MonoBehaviourPunCallbacks
     }
 
 
-    IEnumerator Spawn(string name, float radius)
-    {
-        while (true)
-        {
-            PhotonNetwork.Instantiate
-            (
-                name,
-                RandomPosition(radius),
-                Quaternion.identity
-            );
-
-            yield return new WaitForSeconds(5);
-        }
-    }
-
     private void Awake()
     {
         PhotonNetwork.Instantiate
@@ -48,26 +34,32 @@ public class GameManager : MonoBehaviourPunCallbacks
               RandomPosition(10),
               Quaternion.identity
         );
-
     }
 
     private void Start()
     {
         if (PhotonNetwork.IsMasterClient)
         {
-            StartCoroutine(Spawn("Bee", 50));
+          
         }
     }
    
     public void ExitGame()
     {
+
         PhotonNetwork.LeaveRoom();
+    }
+
+    public override void OnMasterClientSwitched(Player newMasterClient)
+    {
+        PhotonNetwork.SetMasterClient(PhotonNetwork.PlayerList[0]);
     }
 
     public override void OnLeftRoom()
     {  
         PhotonNetwork.LoadLevel("Photon Room");
     }
+
 }
 
 
