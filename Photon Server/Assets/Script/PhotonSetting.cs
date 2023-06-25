@@ -30,8 +30,6 @@ public class PhotonSetting : MonoBehaviourPunCallbacks
         );
     }
 
-
-
     public void Login()
     {
         var request = new LoginWithEmailAddressRequest

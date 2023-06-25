@@ -357,11 +357,10 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.TestRunner.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
-"Assets/Photon/PhotonVoice/Code/Editor/AudioChangesHandlerEditor.cs"
 "Assets/Photon/PhotonVoice/Code/Editor/PhotonVoiceEditorUtils.cs"
 "Assets/Photon/PhotonVoice/Code/Editor/RecorderEditor.cs"
 "Assets/Photon/PhotonVoice/Code/Editor/SpeakerEditor.cs"
-"Assets/Photon/PhotonVoice/Code/Editor/VoiceConnectionEditor.cs"
+"Assets/Photon/PhotonVoice/Code/Editor/UnityVoiceClientEditor.cs"
 "Assets/Photon/PhotonVoice/Code/Editor/WebRtcAudioDspEditor.cs"
 -langversion:9.0
 

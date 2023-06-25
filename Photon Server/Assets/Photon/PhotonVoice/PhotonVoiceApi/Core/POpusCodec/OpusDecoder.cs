@@ -2,6 +2,7 @@
 using POpusCodec.Enums;
 using System.Runtime.InteropServices;
 using Photon.Voice;
+using System.Collections.Generic;
 
 namespace POpusCodec
 {
@@ -9,28 +10,21 @@ namespace POpusCodec
     {
         private const bool UseInbandFEC = true;
 
-        private bool TisFloat;
-        private int sizeofT;
-        
-        private IntPtr _handle = IntPtr.Zero;
-        private const int MaxFrameSize = 5760;
+        protected Action<FrameOut<T>> output;
+        protected bool TisFloat;
+        protected int sizeofT;
+        protected FrameOut<T> frameOut = new FrameOut<T>(null, false);
 
-        private int _channelCount;
+        protected IntPtr handle = IntPtr.Zero;
 
-        private static readonly T[] EmptyBuffer = new T[] { };
+        protected int channels;
+        protected int frameSamples;
 
-        private Bandwidth? _previousPacketBandwidth = null;
+        protected static readonly T[] EmptyBuffer = new T[] { };
 
-        public Bandwidth? PreviousPacketBandwidth
+        public OpusDecoder(Action<FrameOut<T>> output, SamplingRate outputSamplingRateHz, Channels channels, int frameSamples)
         {
-            get
-            {
-                return _previousPacketBandwidth;
-            }
-        }
-
-        public OpusDecoder(SamplingRate outputSamplingRateHz, Channels numChannels)
-        {
+            this.output = output;
             TisFloat = default(T) is float;
             sizeofT = Marshal.SizeOf(default(T));
 
@@ -42,41 +36,64 @@ namespace POpusCodec
             {
                 throw new ArgumentOutOfRangeException("outputSamplingRateHz", "Must use one of the pre-defined sampling rates (" + outputSamplingRateHz + ")");
             }
-            if ((numChannels != Channels.Mono)
-                && (numChannels != Channels.Stereo))
+            if ((channels != Channels.Mono)
+                && (channels != Channels.Stereo))
             {
                 throw new ArgumentOutOfRangeException("numChannels", "Must be Mono or Stereo");
             }
 
-            _channelCount = (int)numChannels;
-            _handle = Wrapper.opus_decoder_create(outputSamplingRateHz, numChannels);
+            this.channels = (int)channels;
+            this.frameSamples = frameSamples;
+            if (!Wrapper.AsyncAPI)
+            {
+                this.buffer = new T[frameSamples * this.channels];
+            }
+            handle = Wrapper.opus_decoder_create(outputSamplingRateHz, channels);
 
-            if (_handle == IntPtr.Zero)
+            if (handle == IntPtr.Zero)
             {
                 throw new OpusException(OpusStatusCode.AllocFail, "Memory was not allocated for the encoder");
             }
         }
-        
+
         private T[] buffer; // allocated for exactly 1 frame size as first valid frame received
-        private FrameBuffer prevPacketData;
         bool prevPacketInvalid; // maybe false if prevPacket us null
 
-        // pass null to indicate packet loss
-        public T[] DecodePacket(ref FrameBuffer packetData)
+        protected void decodePacket(FrameBuffer data, int decodeFEC, int channels, bool endOfStream)
         {
-            if (this.buffer == null && packetData.Array == null)
+            if (Wrapper.AsyncAPI)
             {
-                return EmptyBuffer;
+                if (TisFloat)
+                {
+                    Wrapper.opus_decode_float_async(handle, data.Ptr, data.Length, decodeFEC, endOfStream);
+                }
+                else
+                {
+                    Wrapper.opus_decode_async(handle, data.Ptr, data.Length, decodeFEC, endOfStream);
+                }
             }
-            
-            int numSamplesDecoded = 0;
-
-            if (this.buffer == null)
+            else
             {
-                // on the first call we don't know frame size, use temporal buffer of maximal length
-                this.buffer = new T[MaxFrameSize * _channelCount];                
-            }
+                var numSamplesDecoded = TisFloat ?
+                    Wrapper.opus_decode(handle, data, this.buffer as float[], this.frameSamples, decodeFEC) :
+                    Wrapper.opus_decode(handle, data, this.buffer as short[], this.frameSamples, decodeFEC);
 
+                //Negative already handled at this point.
+                if (numSamplesDecoded == 0)
+                    return;
+
+                procOutput(this.buffer, endOfStream);
+            }
+        }
+
+        protected void procOutput(T[] buffer, bool endOfStream)
+        {
+            output(frameOut.Set(buffer, endOfStream));
+        }
+
+        // pass null to indicate packet loss
+        public void DecodePacket(ref FrameBuffer packetData, bool endOfStream)
+        {
             bool packetInvalid;
             if (packetData.Array == null)
             {
@@ -88,7 +105,6 @@ namespace POpusCodec
                 packetInvalid = bandwidth == (int)OpusStatusCode.InvalidPacket;
             }
 
-            bool regularDecode = false;
             if (UseInbandFEC)
             {
                 if (prevPacketInvalid)
@@ -96,125 +112,99 @@ namespace POpusCodec
                     if (packetInvalid)
                     {
                         // no fec data, conceal previous frame
-                        numSamplesDecoded = TisFloat ?
-                            Wrapper.opus_decode(_handle, new FrameBuffer(), this.buffer as float[], 0, _channelCount) :
-                            Wrapper.opus_decode(_handle, new FrameBuffer(), this.buffer as short[], 0, _channelCount);
-                        //UnityEngine.Debug.Log("======================= Conceal");
+                        decodePacket(new FrameBuffer(), 0, channels, false);
                     }
                     else
                     {
                         // error correct previous frame with the help of the current
-                        numSamplesDecoded = TisFloat ?
-                            Wrapper.opus_decode(_handle, packetData, this.buffer as float[], 1, _channelCount) :
-                            Wrapper.opus_decode(_handle, packetData, this.buffer as short[], 1, _channelCount);
-                        //UnityEngine.Debug.Log("======================= FEC");
-                    }
-                }
-                else
-                {
-                    // decode previous frame
-                    if (prevPacketData.Array != null) // is null on 1st call
-                    {
-                        numSamplesDecoded = TisFloat ?
-                            Wrapper.opus_decode(_handle, prevPacketData, this.buffer as float[], 0, _channelCount) :
-                            Wrapper.opus_decode(_handle, prevPacketData, this.buffer as short[], 0, _channelCount);                        
-                        // prevPacketData is disposed below before copying packetData to it
-                        regularDecode = true;
+                        decodePacket(packetData, 1, channels, false);
                     }
                 }
 
-                prevPacketData.Release();
-                prevPacketData = packetData;
-                packetData.Retain();
+                if (!packetInvalid)
+                {
+                    decodePacket(packetData, 0, channels, endOfStream);
+                }
+
                 prevPacketInvalid = packetInvalid;
             }
             else
             {
-                #pragma warning disable 162
+#pragma warning disable 162
                 // decode or conceal current frame
-                numSamplesDecoded = TisFloat ?
-                    Wrapper.opus_decode(_handle, packetData, this.buffer as float[], 0, _channelCount) :
-                    Wrapper.opus_decode(_handle, packetData, this.buffer as short[], 0, _channelCount);
-                regularDecode = true;
-                #pragma warning restore 162
+                decodePacket(packetData, 0, channels, endOfStream);
+#pragma warning restore 162
             }
-
-            if (numSamplesDecoded == 0)
-                return EmptyBuffer;
-            
-            if (this.buffer.Length != numSamplesDecoded * _channelCount)
-            {
-                if (!regularDecode)
-                {
-                    // wait for regular valid frame to imitialize the size
-                    return EmptyBuffer;
-                }
-                // now that we know the frame size, allocate the buffer and copy data from temporal buffer
-                var tmp = this.buffer;
-                this.buffer = new T[numSamplesDecoded * _channelCount];
-                Buffer.BlockCopy(tmp, 0, this.buffer, 0, numSamplesDecoded * sizeofT);
-            }
-            return this.buffer;
         }
 
-        public T[] DecodeEndOfStream()
+        public virtual void Dispose()
         {
-            int numSamplesDecoded = 0;
-            if (UseInbandFEC && !prevPacketInvalid)
+            if (handle != IntPtr.Zero)
             {
-                // follow the same buffer initializatiopn pattern as in DecodeFrame() though buffer is already initialized most likely
-                if (this.buffer == null)
-                {
-                    // on the first call we don't know frame size, use temporal buffer of maximal length
-                    this.buffer = new T[MaxFrameSize * _channelCount];
-                }
+                Wrapper.opus_decoder_destroy(handle);
+                handle = IntPtr.Zero;
+            }
+        }
+    }
 
-                // decode previous frame
-                if (prevPacketData.Array != null) // is null on 1st call
-                {
-                    numSamplesDecoded = TisFloat ?
-                    Wrapper.opus_decode(_handle, prevPacketData, this.buffer as float[], 1, _channelCount) :
-                    Wrapper.opus_decode(_handle, prevPacketData, this.buffer as short[], 1, _channelCount);
-                }
-                prevPacketData.Release();
-                prevPacketData = new FrameBuffer();
-                prevPacketInvalid = false;
+    public class OpusDecoderAsync<T> : OpusDecoder<T>
+    {
+        // For Unity versions before 2021, IL2CPP fails to compile with error: System.ArgumentOutOfRangeException: Specified argument was out of the range of valid values.
+        // 2021.3 is the oldest 2021 LTS
+#if !UNITY_5_3_OR_NEWER || UNITY_2021_3_OR_NEWER // #if !UNITY || UNITY_2021_3_OR_NEWER
+        [MonoPInvokeCallbackAttribute(typeof(Action<IntPtr, IntPtr, int, bool>))]
+#endif
+        static public void DataCallbackStatic(IntPtr handle, IntPtr p, int count, bool endOfStream)
+        {
+            if (handles.TryGetValue(handle, out var obj))
+            {
+                obj.dataCallback(p, count, endOfStream);
+            }
+        }
 
-                if (numSamplesDecoded == 0)
+        static protected Dictionary<IntPtr, OpusDecoderAsync<T>> handles = new Dictionary<IntPtr, OpusDecoderAsync<T>>();
+
+        public OpusDecoderAsync(Action<FrameOut<T>> output, SamplingRate outputSamplingRateHz, Channels numChannels, int frameDurationSamples)
+            : base(output, outputSamplingRateHz, numChannels, frameDurationSamples)
+        {
+            handles[handle] = this;
+        }
+
+        private float[] bufOutFloat;
+        private short[] bufOutShort;
+        protected void dataCallback(IntPtr p, int count, bool endOfStream)
+        {
+            if (output != null)
+            {
+                if (TisFloat)
                 {
-                    return EmptyBuffer;
+                    if (bufOutFloat == null || bufOutFloat.Length < count)
+                    {
+                        bufOutFloat = new float[count];
+                    }
+                    Marshal.Copy(p, bufOutFloat, 0, count);
+                    //UnityEngine.Debug.LogFormat("!!!!!!!!!!!! DECODE CALBBACK {0} {1} {2} {3} {4} {5} {6} {7}", p, count, endOfStream, bufOutFloat[0], bufOutFloat[1], bufOutFloat[2], bufOutFloat[count - 3], bufOutFloat[count - 2], bufOutFloat[count - 1]);
+                    procOutput(bufOutFloat as T[], endOfStream);
                 }
                 else
                 {
-                    // follow the same buffer initializatiopn pattern as in DecodeFrame() 
-                    if (this.buffer.Length != numSamplesDecoded * _channelCount)
+                    if (bufOutShort == null || bufOutShort.Length < count)
                     {
-                        // now that we know the frame size, allocate the buffer and copy data from temporal buffer
-                        var tmp = this.buffer;
-                        this.buffer = new T[numSamplesDecoded * _channelCount];
-                        Buffer.BlockCopy(tmp, 0, this.buffer, 0, numSamplesDecoded * sizeofT);
+                        bufOutShort = new short[count];
                     }
-
-                    return this.buffer;
+                    Marshal.Copy(p, bufOutShort, 0, count);
+                    procOutput(bufOutShort as T[], endOfStream);
                 }
-            }
-            else
-            {
-                prevPacketData.Release();
-                prevPacketData = new FrameBuffer();
-                prevPacketInvalid = false;
-                return EmptyBuffer;
             }
         }
 
-        public void Dispose()
+        public override void Dispose()
         {
-            prevPacketData.Release();
-            if (_handle != IntPtr.Zero)
+            if (handle != IntPtr.Zero)
             {
-                Wrapper.opus_decoder_destroy(_handle);
-                _handle = IntPtr.Zero;
+                handles.Remove(handle);
             }
+            base.Dispose();
         }
     }
 }

@@ -8,8 +8,9 @@
 // <author>developer@photonengine.com</author>
 // ----------------------------------------------------------------------------
 
+#if PUN_2_OR_NEWER
+
 using System;
-using Photon.Voice.Unity;
 using Photon.Voice.PUN;
 
 #pragma warning disable 0649 // Field is never assigned to, and will always have its default value
@@ -20,16 +21,17 @@ namespace ExitGames.Demos.DemoPunVoice
     using UnityEngine;
     using UnityEngine.UI;
     using Client.Photon;
+    using System.Linq;
 
 #if !UNITY_EDITOR && UNITY_PS4
     using Sony.NP;
-#elif !UNITY_EDITOR && UNITY_SHARLIN
+#elif !UNITY_EDITOR && UNITY_PS5
     using System.Runtime.InteropServices;
 #endif
 
     public class VoiceDemoUI : MonoBehaviour
     {
-#if !UNITY_EDITOR && UNITY_SHARLIN
+#if !UNITY_EDITOR && UNITY_PS5
     [DllImport("PhotonVoiceLocalUserIDPlugin")]
     private static extern int egpvgetLocalUserID(); // returns the user ID of the user at index 0 in the list of local users
 #endif
@@ -37,8 +39,8 @@ namespace ExitGames.Demos.DemoPunVoice
         private Text punState;
         [SerializeField]
         private Text voiceState;
-        
-        private PhotonVoiceNetwork punVoiceNetwork;
+
+        private PunVoiceClient punVoiceClient;
 
         private Canvas canvas;
 
@@ -55,7 +57,7 @@ namespace ExitGames.Demos.DemoPunVoice
         [SerializeField]
         private Text voiceDebugText;
 
-        public Recorder recorder;
+        private PhotonVoiceView recorder;
 
         [SerializeField]
         private GameObject inGameSettings;
@@ -87,12 +89,12 @@ namespace ExitGames.Demos.DemoPunVoice
                 this.voiceDebugText.text = String.Empty;
                 if (this.debugMode)
                 {
-                    this.previousDebugLevel = this.punVoiceNetwork.Client.LoadBalancingPeer.DebugOut;
-                    this.punVoiceNetwork.Client.LoadBalancingPeer.DebugOut = DebugLevel.ALL;
+                    this.previousDebugLevel = this.punVoiceClient.Client.LoadBalancingPeer.DebugOut;
+                    this.punVoiceClient.Client.LoadBalancingPeer.DebugOut = DebugLevel.ALL;
                 }
                 else
                 {
-                    this.punVoiceNetwork.Client.LoadBalancingPeer.DebugOut = this.previousDebugLevel;
+                    this.punVoiceClient.Client.LoadBalancingPeer.DebugOut = this.previousDebugLevel;
                 }
                 if (DebugToggled != null)
                 {
@@ -110,37 +112,24 @@ namespace ExitGames.Demos.DemoPunVoice
 
         private void Awake()
         {
-            this.punVoiceNetwork = PhotonVoiceNetwork.Instance;
+            this.punVoiceClient = PunVoiceClient.Instance;
         }
 
-        private void OnEnable()
-        {
-            ChangePOV.CameraChanged += this.OnCameraChanged;
-            BetterToggle.ToggleValueChanged += this.BetterToggle_ToggleValueChanged;
-            CharacterInstantiation.CharacterInstantiated += this.CharacterInstantiation_CharacterInstantiated;
-            this.punVoiceNetwork.Client.StateChanged += this.VoiceClientStateChanged;
-            PhotonNetwork.NetworkingClient.StateChanged += this.PunClientStateChanged;
-        }
-
-        private void OnDisable()
+        private void OnDestroy()
         {
             ChangePOV.CameraChanged -= this.OnCameraChanged;
             BetterToggle.ToggleValueChanged -= this.BetterToggle_ToggleValueChanged;
             CharacterInstantiation.CharacterInstantiated -= this.CharacterInstantiation_CharacterInstantiated;
-            this.punVoiceNetwork.Client.StateChanged -= this.VoiceClientStateChanged;
+            this.punVoiceClient.Client.StateChanged -= this.VoiceClientStateChanged;
             PhotonNetwork.NetworkingClient.StateChanged -= this.PunClientStateChanged;
         }
 
         private void CharacterInstantiation_CharacterInstantiated(GameObject character)
         {
-            if (this.recorder) // probably using a global recorder
-            {
-                return;
-            }
             PhotonVoiceView photonVoiceView = character.GetComponent<PhotonVoiceView>();
-            if (photonVoiceView.IsRecorder)
+            if (photonVoiceView != null)
             {
-                this.recorder = photonVoiceView.RecorderInUse;
+                this.recorder = photonVoiceView;
             }
         }
 
@@ -157,7 +146,10 @@ namespace ExitGames.Demos.DemoPunVoice
                         break;
 
                     case "VoiceDetection":
-                        toggle.isOn = this.recorder != null && this.recorder.VoiceDetection;
+                        if (this.recorder != null && this.recorder.RecorderInUse != null)
+                        {
+                            toggle.isOn = this.recorder.RecorderInUse.VoiceDetection;
+                        }
                         break;
 
                     case "DebugVoice":
@@ -165,19 +157,25 @@ namespace ExitGames.Demos.DemoPunVoice
                         break;
 
                     case "Transmit":
-                        toggle.isOn = this.recorder != null && this.recorder.TransmitEnabled;
+                        if (this.recorder != null && this.recorder.RecorderInUse != null)
+                        {
+                            toggle.isOn = this.recorder.RecorderInUse.TransmitEnabled;
+                        }
                         break;
 
                     case "DebugEcho":
-                        toggle.isOn = this.recorder != null && this.recorder.DebugEchoMode;
+                        if (this.recorder != null && this.recorder.RecorderInUse != null)
+                        {
+                            toggle.isOn = this.recorder.RecorderInUse.DebugEchoMode;
+                        }
                         break;
 
                     case "AutoConnectAndJoin":
-                        toggle.isOn = this.punVoiceNetwork.AutoConnectAndJoin;
+                        toggle.isOn = this.punVoiceClient.AutoConnectAndJoin;
                         break;
 
                     case "AutoLeaveAndDisconnect":
-                        toggle.isOn = this.punVoiceNetwork.AutoLeaveAndDisconnect;
+                        toggle.isOn = this.punVoiceClient.AutoLeaveAndDisconnect;
                         break;
                 }
             }
@@ -201,31 +199,31 @@ namespace ExitGames.Demos.DemoPunVoice
                     }
                     break;
                 case "Transmit":
-                    if (this.recorder)
+                    if (this.recorder.RecorderInUse)
                     {
-                        this.recorder.TransmitEnabled = toggle.isOn;
+                        this.recorder.RecorderInUse.TransmitEnabled = toggle.isOn;
                     }
                     break;
                 case "VoiceDetection":
-                    if (this.recorder)
+                    if (this.recorder.RecorderInUse)
                     {
-                        this.recorder.VoiceDetection = toggle.isOn;
+                        this.recorder.RecorderInUse.VoiceDetection = toggle.isOn;
                     }
                     break;
                 case "DebugEcho":
-                    if (this.recorder)
+                    if (this.recorder.RecorderInUse)
                     {
-                        this.recorder.DebugEchoMode = toggle.isOn;
+                        this.recorder.RecorderInUse.DebugEchoMode = toggle.isOn;
                     }
                     break;
                 case "DebugVoice":
                     this.DebugMode = toggle.isOn;
                     break;
                 case "AutoConnectAndJoin":
-                    this.punVoiceNetwork.AutoConnectAndJoin = toggle.isOn;
+                    this.punVoiceClient.AutoConnectAndJoin = toggle.isOn;
                     break;
                 case "AutoLeaveAndDisconnect":
-                    this.punVoiceNetwork.AutoLeaveAndDisconnect = toggle.isOn;
+                    this.punVoiceClient.AutoLeaveAndDisconnect = toggle.isOn;
                     break;
             }
         }
@@ -237,6 +235,12 @@ namespace ExitGames.Demos.DemoPunVoice
 
         private void Start()
         {
+            ChangePOV.CameraChanged += this.OnCameraChanged;
+            BetterToggle.ToggleValueChanged += this.BetterToggle_ToggleValueChanged;
+            CharacterInstantiation.CharacterInstantiated += this.CharacterInstantiation_CharacterInstantiated;
+            this.punVoiceClient.Client.StateChanged += this.VoiceClientStateChanged;
+            PhotonNetwork.NetworkingClient.StateChanged += this.PunClientStateChanged;
+
             this.canvas = this.GetComponentInChildren<Canvas>();
             if (this.punSwitch != null)
             {
@@ -258,7 +262,7 @@ namespace ExitGames.Demos.DemoPunVoice
                 this.debugGO = this.punState.transform.parent.gameObject;
             }
             this.volumeBeforeMute = AudioListener.volume;
-            this.previousDebugLevel = this.punVoiceNetwork.Client.LoadBalancingPeer.DebugOut;
+            this.previousDebugLevel = this.punVoiceClient.Client.LoadBalancingPeer.DebugOut;
             if (this.globalSettings != null)
             {
                 this.globalSettings.SetActive(true);
@@ -266,22 +270,21 @@ namespace ExitGames.Demos.DemoPunVoice
             }
             if (this.devicesInfoText != null)
             {
-                if (UnityMicrophone.devices == null || UnityMicrophone.devices.Length == 0)
+                using (var unityMicEnum = new Photon.Voice.Unity.AudioInEnumerator(this.punVoiceClient.Client))
                 {
-                    this.devicesInfoText.enabled = true;
-                    this.devicesInfoText.color = Color.red;
-                    this.devicesInfoText.text = "No microphone device detected!";
-                }
-                else if (UnityMicrophone.devices.Length == 1)
-                {
-                    this.devicesInfoText.text = string.Format("Mic.: {0}", UnityMicrophone.devices[0]);
-                }
-                else
-                {
-                    this.devicesInfoText.text = string.Format("Multi.Mic.Devices:\n0. {0} (active)\n", UnityMicrophone.devices[0]);
-                    for (int i = 1; i < UnityMicrophone.devices.Length; i++)
+                    using (var photonMicEnum = Photon.Voice.Platform.CreateAudioInEnumerator(this.punVoiceClient.Client))
                     {
-                        this.devicesInfoText.text = string.Concat(this.devicesInfoText.text, string.Format("{0}. {1}\n", i, UnityMicrophone.devices[i]));
+                        if (unityMicEnum.Count() + photonMicEnum.Count() == 0)
+                        {
+                            this.devicesInfoText.enabled = true;
+                            this.devicesInfoText.color = Color.red;
+                            this.devicesInfoText.text = "No microphone device detected!";
+                        }
+                        else
+                        {
+                            this.devicesInfoText.text = "Mic Unity: " + string.Join(", ", unityMicEnum.Select(x => x.ToString()));
+                            this.devicesInfoText.text += "\nMic Photon: " + string.Join(", ", photonMicEnum.Select(x => x.ToString()));
+                        }
                     }
                 }
             }
@@ -291,9 +294,9 @@ namespace ExitGames.Demos.DemoPunVoice
             UserProfiles.GetLocalUsers(localUsers);
             int userID = localUsers.LocalUsersIds[0].UserId.Id;
 
-            punVoiceNetwork.PlayStationUserID = userID;
-#elif !UNITY_EDITOR && UNITY_SHARLIN
-            punVoiceNetwork.PlayStationUserID = egpvgetLocalUserID();
+            punVoiceClient.PlayStationUserID = userID;
+#elif !UNITY_EDITOR && UNITY_PS5
+            punVoiceClient.PlayStationUserID = egpvgetLocalUserID();
 #endif
         }
 
@@ -313,22 +316,22 @@ namespace ExitGames.Demos.DemoPunVoice
 
         private void VoiceSwitchOnClick()
         {
-            if (this.punVoiceNetwork.ClientState == Photon.Realtime.ClientState.Joined)
+            if (this.punVoiceClient.ClientState == Photon.Realtime.ClientState.Joined)
             {
-                this.punVoiceNetwork.Disconnect();
+                this.punVoiceClient.Disconnect();
             }
-            else if (this.punVoiceNetwork.ClientState == Photon.Realtime.ClientState.PeerCreated
-                     || this.punVoiceNetwork.ClientState == Photon.Realtime.ClientState.Disconnected)
+            else if (this.punVoiceClient.ClientState == Photon.Realtime.ClientState.PeerCreated
+                     || this.punVoiceClient.ClientState == Photon.Realtime.ClientState.Disconnected)
             {
-                this.punVoiceNetwork.ConnectAndJoinRoom();
+                this.punVoiceClient.ConnectAndJoinRoom();
             }
         }
 
         private void CalibrateButtonOnClick()
         {
-            if (this.recorder && !this.recorder.VoiceDetectorCalibrating)
+            if (this.recorder.RecorderInUse && !this.recorder.RecorderInUse.VoiceDetectorCalibrating)
             {
-                this.recorder.VoiceDetectorCalibrate(this.calibrationMilliSeconds);
+                this.recorder.RecorderInUse.VoiceDetectorCalibrate(this.calibrationMilliSeconds);
             }
         }
 
@@ -338,9 +341,9 @@ namespace ExitGames.Demos.DemoPunVoice
 #if UNITY_EDITOR
             this.InitToggles(this.globalSettings.GetComponentsInChildren<Toggle>());
 #endif
-            if (this.recorder != null && this.recorder.LevelMeter != null)
+            if (this.recorder != null && this.recorder.RecorderInUse != null && this.recorder.RecorderInUse.LevelMeter != null)
             {
-                this.voiceDebugText.text = string.Format("Amp: avg. {0:0.000000}, peak {1:0.000000}", this.recorder.LevelMeter.CurrentAvgAmp, this.recorder.LevelMeter.CurrentPeakAmp);
+                this.voiceDebugText.text = string.Format("Amp: avg. {0:0.000000}, peak {1:0.000000}", this.recorder.RecorderInUse.LevelMeter.CurrentAvgAmp, this.recorder.RecorderInUse.LevelMeter.CurrentPeakAmp);
             }
         }
 
@@ -363,7 +366,7 @@ namespace ExitGames.Demos.DemoPunVoice
                     this.punSwitchText.text = "PUN busy";
                     break;
             }
-            this.UpdateUiBasedOnVoiceState(this.punVoiceNetwork.ClientState);
+            this.UpdateUiBasedOnVoiceState(this.punVoiceClient.ClientState);
         }
 
         private void VoiceClientStateChanged(Photon.Realtime.ClientState fromState, Photon.Realtime.ClientState toState)
@@ -381,10 +384,10 @@ namespace ExitGames.Demos.DemoPunVoice
                     this.inGameSettings.SetActive(true);
                     this.voiceSwitchText.text = "Voice Disconnect";
                     this.InitToggles(this.inGameSettings.GetComponentsInChildren<Toggle>());
-                    if (this.recorder != null)
+                    if (this.recorder != null && this.recorder.RecorderInUse != null)
                     {
-                        this.calibrateButton.interactable = !this.recorder.VoiceDetectorCalibrating;
-                        this.calibrateText.text = this.recorder.VoiceDetectorCalibrating ? "Calibrating" : string.Format("Calibrate ({0}s)", this.calibrationMilliSeconds / 1000);
+                        this.calibrateButton.interactable = !this.recorder.RecorderInUse.VoiceDetectorCalibrating;
+                        this.calibrateText.text = this.recorder.RecorderInUse.VoiceDetectorCalibrating ? "Calibrating" : string.Format("Calibrate ({0}s)", this.calibrationMilliSeconds / 1000);
                     }
                     else
                     {
@@ -417,8 +420,12 @@ namespace ExitGames.Demos.DemoPunVoice
                     break;
             }
         }
+
+        protected void OnApplicationQuit()
+        {
+            this.punVoiceClient.Client.StateChanged -= this.VoiceClientStateChanged;
+            PhotonNetwork.NetworkingClient.StateChanged -= this.PunClientStateChanged;
+        }
     }
-
-
-
 }
+#endif

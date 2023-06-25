@@ -7,7 +7,7 @@
 
     public class CodecSettingsUI : MonoBehaviour
     {
-        #pragma warning disable 649
+#pragma warning disable 649
         [SerializeField]
         private Dropdown frameDurationDropdown;
         [SerializeField]
@@ -16,7 +16,7 @@
         private InputField bitrateInputField;
         [SerializeField]
         private Recorder recorder;
-        #pragma warning restore 649
+#pragma warning restore 649
 
         private static readonly List<string> frameDurationOptions = new List<string>
         {
@@ -70,10 +70,6 @@
             if (int.TryParse(newBitrateString, out newBirate))
             {
                 this.recorder.Bitrate = newBirate;
-                if (this.recorder.RequiresRestart)
-                {
-                    this.recorder.RestartRecording();
-                }
             }
         }
 
@@ -102,10 +98,6 @@
                     break;
             }
             this.recorder.FrameDuration = newFrameDuration;
-            if (this.recorder.RequiresRestart)
-            {
-                this.recorder.RestartRecording();
-            }
         }
 
         private void OnSamplingRateChanged(int index)
@@ -130,10 +122,6 @@
                     break;
             }
             this.recorder.SamplingRate = newSamplingRate;
-            if (this.recorder.RequiresRestart)
-            {
-                this.recorder.RestartRecording();
-            }
         }
 
         private void InitFrameDuration()

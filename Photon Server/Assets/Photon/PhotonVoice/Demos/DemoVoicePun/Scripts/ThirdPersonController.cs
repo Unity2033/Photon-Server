@@ -8,16 +8,19 @@
 // <author>developer@photonengine.com</author>
 // ----------------------------------------------------------------------------
 
-namespace ExitGames.Demos.DemoPunVoice {
+namespace ExitGames.Demos.DemoPunVoice
+{
 
     using UnityEngine;
 
-    public class ThirdPersonController : BaseController {
+    public class ThirdPersonController : BaseController
+    {
 
         [SerializeField]
         private float movingTurnSpeed = 360;
 
-        protected override void Move(float h, float v) {
+        protected override void Move(float h, float v)
+        {
             this.rigidBody.velocity = v * this.speed * this.transform.forward;
             this.transform.rotation *= Quaternion.AngleAxis(this.movingTurnSpeed * h * Time.deltaTime, Vector3.up);
         }

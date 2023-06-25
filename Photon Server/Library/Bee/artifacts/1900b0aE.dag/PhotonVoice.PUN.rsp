@@ -354,8 +354,8 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/PhotonVoice.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
-"Assets/Photon/PhotonVoice/Code/PUN/PhotonVoiceNetwork.cs"
 "Assets/Photon/PhotonVoice/Code/PUN/PhotonVoiceView.cs"
+"Assets/Photon/PhotonVoice/Code/PUN/PunVoiceClient.cs"
 "Assets/Photon/PhotonVoice/Code/PUN/UtilityScripts/VoiceDebugScript.cs"
 -langversion:9.0
 

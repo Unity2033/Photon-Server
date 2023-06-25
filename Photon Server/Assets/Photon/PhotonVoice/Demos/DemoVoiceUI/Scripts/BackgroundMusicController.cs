@@ -5,7 +5,7 @@
 
     public class BackgroundMusicController : MonoBehaviour
     {
-        #pragma warning disable 649
+#pragma warning disable 649
         [SerializeField]
         private Text volumeText;
         [SerializeField]
@@ -14,7 +14,7 @@
         private AudioSource audioSource;
         [SerializeField]
         private float initialVolume = 0.125f;
-        #pragma warning restore 649
+#pragma warning restore 649
 
         private void Awake()
         {
@@ -27,7 +27,7 @@
 
         private void OnVolumeChanged(float newValue)
         {
-            this.volumeText.text = string.Format("BG Volume: {0:0.###}", newValue);
+//            this.volumeText.text = string.Format("BG Volume: {0:0.###}", newValue);
             this.audioSource.volume = newValue;
         }
     }

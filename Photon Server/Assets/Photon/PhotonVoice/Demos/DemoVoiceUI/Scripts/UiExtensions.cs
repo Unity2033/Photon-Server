@@ -1,5 +1,6 @@
 ﻿namespace Photon.Voice.Unity.Demos
 {
+    using Photon.Voice.Unity.Demos.DemoVoiceUI;
     using UnityEngine;
     using UnityEngine.Events;
     using UnityEngine.UI;
@@ -20,49 +21,49 @@
         }
 
         //https://forum.unity.com/threads/change-the-value-of-a-toggle-without-triggering-onvaluechanged.275056/#post-2750271
-        #if !UNITY_2019_1_OR_NEWER
+#if !UNITY_2019_1_OR_NEWER
         private static Toggle.ToggleEvent emptyToggleEvent = new Toggle.ToggleEvent();
-        #endif
+#endif
 
         // added to 2019.1 https://docs.unity3d.com/2019.1/Documentation/ScriptReference/UI.Toggle.SetIsOnWithoutNotify.html
         public static void SetValue(this Toggle toggle, bool isOn)
         {
-            #if UNITY_2019_1_OR_NEWER
+#if UNITY_2019_1_OR_NEWER
             toggle.SetIsOnWithoutNotify(isOn);
-            #else
+#else
             Toggle.ToggleEvent originalEvent = toggle.onValueChanged;
             toggle.onValueChanged = emptyToggleEvent;
             toggle.isOn = isOn;
             toggle.onValueChanged = originalEvent;
-            #endif
+#endif
         }
 
-        #if !UNITY_2019_1_OR_NEWER
+#if !UNITY_2019_1_OR_NEWER
         private static Slider.SliderEvent emptySliderEvent = new Slider.SliderEvent();
-        #endif
+#endif
 
         public static void SetValue(this Slider slider, float v)
         {
-            #if UNITY_2019_1_OR_NEWER
+#if UNITY_2019_1_OR_NEWER
             slider.SetValueWithoutNotify(v);
-            #else
+#else
             Slider.SliderEvent originalEvent = slider.onValueChanged;
             slider.onValueChanged = emptySliderEvent;
             slider.value = v;
             slider.onValueChanged = originalEvent;
-            #endif
+#endif
         }
 
-        #if !UNITY_2019_1_OR_NEWER
+#if !UNITY_2019_1_OR_NEWER
         private static InputField.OnChangeEvent emptyInputFieldEvent = new InputField.OnChangeEvent();
         private static InputField.SubmitEvent emptyInputFieldSubmitEvent = new InputField.SubmitEvent();
-        #endif
+#endif
 
         public static void SetValue(this InputField inputField, string v)
         {
-            #if UNITY_2019_1_OR_NEWER
+#if UNITY_2019_1_OR_NEWER
             inputField.SetTextWithoutNotify(v);
-            #else
+#else
             InputField.OnChangeEvent origianlEvent = inputField.onValueChanged;
             InputField.SubmitEvent originalSubmitEvent = inputField.onEndEdit;
             inputField.onValueChanged = emptyInputFieldEvent;
@@ -70,7 +71,7 @@
             inputField.text = v;
             inputField.onValueChanged = origianlEvent;
             inputField.onEndEdit = originalSubmitEvent;
-            #endif
+#endif
         }
 
         // https://forum.unity.com/threads/deleting-all-chidlren-of-an-object.92827/#post-2058407
@@ -80,7 +81,7 @@
         /// </summary>
         public static void DestroyChildren(this Transform transform)
         {
-            if (!ReferenceEquals(null, transform) && transform)
+            if (null != transform && transform)
             {
                 for (int i = transform.childCount - 1; i >= 0; --i)
                 {
@@ -152,6 +153,12 @@
         {
             slider.onValueChanged.RemoveAllListeners();
             slider.onValueChanged.AddListener(action);
+        }
+
+        public static void SetSingleOnValueChangedCallback(this MicrophoneSelector selector, UnityAction<Recorder.MicType, DeviceInfo> action)
+        {
+            selector.onValueChanged.RemoveAllListeners();
+            selector.onValueChanged.AddListener(action);
         }
     }
 }

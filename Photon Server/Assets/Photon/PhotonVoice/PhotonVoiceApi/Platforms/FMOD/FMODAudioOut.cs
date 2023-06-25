@@ -7,9 +7,10 @@ using FMODLib = FMOD;
 namespace Photon.Voice.FMOD
 {
     // Plays back input audio via FMOD Sound
-    public class AudioOut<T> :  AudioOutDelayControl<T>
+    public class AudioOut<T> : AudioOutDelayControl<T>
     {
-        protected readonly int sizeofT = Marshal.SizeOf(default(T));
+        protected int channels;
+        protected int frequency;
 
         FMODLib.System coreSystem;
         FMODLib.Sound sound;
@@ -43,6 +44,9 @@ namespace Photon.Voice.FMOD
 
         override public void OutCreate(int samplingRate, int channels, int bufferSamples)
         {
+            this.channels = channels;
+            this.frequency = samplingRate;
+
             FMODLib.RESULT res;
             FMODLib.CREATESOUNDEXINFO exinfo = new FMODLib.CREATESOUNDEXINFO();
             exinfo.cbsize = Marshal.SizeOf(exinfo);
@@ -76,13 +80,13 @@ namespace Photon.Voice.FMOD
             }
         }
 
-        override public int OutPos 
-        { 
-            get 
+        override public long OutPos
+        {
+            get
             {
                 channel.getPosition(out uint pos, FMODLib.TIMEUNIT.PCMBYTES);
-                return (int)(pos / channels / sizeofT); 
-            } 
+                return pos / channels / sizeofT;
+            }
         }
 
         override public void OutWrite(T[] frame, int offsetSamples)
@@ -127,7 +131,6 @@ namespace Photon.Voice.FMOD
             {
                 Error = "failed to unlock sound buffer: " + res;
                 logger.LogError(logPrefix + Error);
-                return;
             }
         }
 
@@ -153,7 +156,7 @@ namespace Photon.Voice.FMOD
             this.fmodEvent = fmodEvent;
         }
 
-        override public int OutPos
+        override public long OutPos
         {
             get
             {
@@ -164,7 +167,7 @@ namespace Photon.Voice.FMOD
                 else
                 {
                     fmodEvent.getTimelinePosition(out int position);
-                    return (int)(position * (long)this.frequency / 1000 % this.bufferSamples);
+                    return (long)position * this.frequency / 1000;
                 }
             }
         }
@@ -181,15 +184,15 @@ namespace Photon.Voice.FMOD
                 instTable[instCnt] = this;
                 ud = new IntPtr(instCnt);
                 instCnt++;
-           }
+            }
 
             fmodEvent.setUserData(ud);
-            
+
             fmodEvent.start();
             logger.LogInfo(logPrefix + "Event Started");
         }
 
-        [AOT.MonoPInvokeCallback(typeof(FMODLib.Studio.EVENT_CALLBACK))]
+        [MonoPInvokeCallback(typeof(FMODLib.Studio.EVENT_CALLBACK))]
         static FMODLib.RESULT FMODEventCallback(FMODLib.Studio.EVENT_CALLBACK_TYPE type, IntPtr instance, IntPtr parameterPtr)
         {
             var evDummy = new FMODLib.Studio.EventInstance();
@@ -206,30 +209,31 @@ namespace Photon.Voice.FMOD
             }
             return audioOut.fmodEventCallback(type, instance, parameterPtr);
         }
+
         FMODLib.RESULT fmodEventCallback(FMODLib.Studio.EVENT_CALLBACK_TYPE type, IntPtr instance, IntPtr parameterPtr)
         {
-            logger.LogInfo(logPrefix + "EventCallback " + type);            
+            logger.LogInfo(logPrefix + "EventCallback " + type);
             switch (type)
             {
                 case FMODLib.Studio.EVENT_CALLBACK_TYPE.CREATE_PROGRAMMER_SOUND:
-                    {
-                        var parameter = Marshal.PtrToStructure<FMODLib.Studio.PROGRAMMER_SOUND_PROPERTIES>(parameterPtr);
-                        parameter.sound = Sound.handle;
-                        parameter.subsoundIndex = -1;
-                        Marshal.StructureToPtr(parameter, parameterPtr, false);
-                        logger.LogInfo(logPrefix + "Sound Assigned to Event Parameter");
-                    }
-                    break;
+                {
+                    var parameter = Marshal.PtrToStructure<FMODLib.Studio.PROGRAMMER_SOUND_PROPERTIES>(parameterPtr);
+                    parameter.sound = Sound.handle;
+                    parameter.subsoundIndex = -1;
+                    Marshal.StructureToPtr(parameter, parameterPtr, false);
+                    logger.LogInfo(logPrefix + "Sound Assigned to Event Parameter");
+                }
+                break;
                 case FMODLib.Studio.EVENT_CALLBACK_TYPE.DESTROY_PROGRAMMER_SOUND:
-                    {
-                    	// sound is released in Stop()
-                    	
-                        //var parameter = Marshal.PtrToStructure<FMODLib.Studio.PROGRAMMER_SOUND_PROPERTIES>(parameterPtr);
-                        //var sound = new FMODLib.Sound();
-                        //sound.handle = parameter.sound;
-                        //sound.release();
-                    }
-                    break;
+                {
+                    // sound is released in Stop()
+
+                    //var parameter = Marshal.PtrToStructure<FMODLib.Studio.PROGRAMMER_SOUND_PROPERTIES>(parameterPtr);
+                    //var sound = new FMODLib.Sound();
+                    //sound.handle = parameter.sound;
+                    //sound.release();
+                }
+                break;
                 case FMODLib.Studio.EVENT_CALLBACK_TYPE.DESTROYED:
                     // Now the event has been destroyed, unpin the string memory so it can be garbage collected
                     break;

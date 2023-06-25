@@ -3,7 +3,8 @@ using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
 [Serializable]
-public class MouseLookHelper {
+public class MouseLookHelper
+{
     public float XSensitivity = 2f;
     public float YSensitivity = 2f;
     public bool clampVerticalRotation = true;
@@ -15,34 +16,40 @@ public class MouseLookHelper {
     private Quaternion m_CharacterTargetRot;
     private Quaternion m_CameraTargetRot;
 
-    public void Init(Transform character, Transform camera) {
+    public void Init(Transform character, Transform camera)
+    {
         this.m_CharacterTargetRot = character.localRotation;
         this.m_CameraTargetRot = camera.localRotation;
     }
 
-    public void LookRotation(Transform character, Transform camera) {
+    public void LookRotation(Transform character, Transform camera)
+    {
         float yRot = CrossPlatformInputManager.GetAxis("Mouse X") * this.XSensitivity;
         float xRot = CrossPlatformInputManager.GetAxis("Mouse Y") * this.YSensitivity;
 
         this.m_CharacterTargetRot *= Quaternion.Euler(0f, yRot, 0f);
         this.m_CameraTargetRot *= Quaternion.Euler(-xRot, 0f, 0f);
 
-        if (this.clampVerticalRotation) {
+        if (this.clampVerticalRotation)
+        {
             this.m_CameraTargetRot = this.ClampRotationAroundXAxis(this.m_CameraTargetRot);
         }
-        if (this.smooth) {
+        if (this.smooth)
+        {
             character.localRotation = Quaternion.Slerp(character.localRotation, this.m_CharacterTargetRot,
                 this.smoothTime * Time.deltaTime);
             camera.localRotation = Quaternion.Slerp(camera.localRotation, this.m_CameraTargetRot,
                 this.smoothTime * Time.deltaTime);
         }
-        else {
+        else
+        {
             character.localRotation = this.m_CharacterTargetRot;
             camera.localRotation = this.m_CameraTargetRot;
         }
     }
 
-    private Quaternion ClampRotationAroundXAxis(Quaternion q) {
+    private Quaternion ClampRotationAroundXAxis(Quaternion q)
+    {
         q.x /= q.w;
         q.y /= q.w;
         q.z /= q.w;

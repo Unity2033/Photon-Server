@@ -22,32 +22,87 @@ namespace Photon.Voice
         void LogDebug(string fmt, params object[] args);
     }
 
+
+    public readonly struct SendFrameParams
+    {
+        public bool TargetMe { get; }
+        public int[] TargetPlayers { get; }
+        public byte InterestGroup { get; }
+        public bool Reliable { get; }
+        public bool Encrypt { get; }
+
+        public SendFrameParams(bool targetMe, int[] targetPlayers, byte interestGroup, bool reliable, bool encrypt)
+        {
+            TargetMe = targetMe;
+            TargetPlayers = targetPlayers;
+            InterestGroup = interestGroup;
+            Reliable = reliable;
+            Encrypt = encrypt;
+        }
+    }
+
     public interface IVoiceTransport
     {
         bool IsChannelJoined(int channelId);
-        // targetPlayerId: to all if 0, to myself if -1
-        void SendVoicesInfo(IEnumerable<LocalVoice> voices, int channelId, int targetPlayerId);
-        // targetPlayerId: to all if 0, to myself if -1
-        void SendVoiceRemove(LocalVoice voice, int channelId, int targetPlayerId);
-        // targetPlayerId: to all if 0, to myself if -1
-        void SendFrame(ArraySegment<byte> data, FrameFlags flags, byte evNumber, byte voiceId, int channelId, int targetPlayerId, bool reliable, LocalVoice localVoice);
+        // if targetMe == false and targetPlayers != null, targetPlayers are targeted
+        // if targetMe == false and targetPlayers == null, all but local player are targeted
+        // if targetMe == true and targetPlayers != null, targetPlayers and local player are targeted
+        // if targetMe == true and targetPlayers == null, all players are targeted
+        // Transport should not modify targetPlayers.
+        void SendVoiceInfo(LocalVoice voice, int channelId, bool targetMe, int[] targetPlayers);
+        void SendVoiceRemove(LocalVoice voice, int channelId, bool targetMe, int[] targetPlayers);
+        void SendFrame(ArraySegment<byte> data, FrameFlags flags, byte evNumber, byte frNumber, byte voiceId, int channelId, SendFrameParams par);
         string ChannelIdStr(int channelId);
         string PlayerIdStr(int playerId);
+        // The maximum length of the frame data array that fits into one network packet.
+        // Return <= 0 to avoid fragementing.
+        int GetPayloadFragmentSize(SendFrameParams par);
     }
 
     /// <summary>
     /// Voice client interact with other clients on network via IVoiceTransport.
-    /// </summary>        
+    /// </summary>
     public class VoiceClient : IDisposable
     {
         internal IVoiceTransport transport;
         internal ILogger logger;
 
-        /// <summary>Lost frames counter.</summary>
+        public bool ThreadingEnabled { get; set; } = true;
+        /// <summary>Lost events counter (the number of empty frames sent to the deocder).</summary>
+        public int EventsLost { get; internal set; }
+
+        /// <summary>Lost frames counter (the number of empty frames sent to the deocder).</summary>
         public int FramesLost { get; internal set; }
+
+        /// <summary>The counter of assembled frames, fragments of which are partially missing.</summary>
+        public int FramesFragPart { get; internal set; }
+
+        /// <summary>Recovered frames counter.</summary>
+        public int FramesRecovered { get; internal set; }
+
+        /// <summary>Counter of slots between correctly ordered frames.</summary>
+        public int FramesMiss { get; internal set; }
+
+        /// <summary>Counter of late (incorrectly ordered) frames.</summary>
+        public int FramesLate { get; internal set; }
+
+        /// <summary>Counter of late but still used frames.</summary>
+        public int FramesLateUsed { get { return FramesMiss - FramesLost; } }
 
         /// <summary>Received frames counter.</summary>
         public int FramesReceived { get; private set; }
+
+        /// <summary>Received FEC events counter.</summary>
+        public int FramesReceivedFEC { get; internal set; }
+
+        /// <summary>FEC recorery attempts counter.</summary>
+        public int FramesTryFEC { get; internal set; }
+
+        /// <summary>Received events for fragmented frames counter.</summary>
+        public int FramesReceivedFragments { get; internal set; }
+
+        /// <summary>Assembled fragmented frames counter.</summary>
+        public int FramesReceivedFragmented { get; internal set; }
 
         /// <summary>Sent frames counter.</summary>
         public int FramesSent { get { int x = 0; foreach (var v in this.localVoices) { x += v.Value.FramesSent; } return x; } }
@@ -64,7 +119,7 @@ namespace Photon.Voice
         /// <summary>Do not log warning when duplicate info received.</summary>
         public bool SuppressInfoDuplicateWarning { get; set; }
 
-        /// <summary>Remote voice info event delegate.</summary>        
+        /// <summary>Remote voice info event delegate.</summary>
         public delegate void RemoteVoiceInfoDelegate(int channelId, int playerId, byte voiceId, VoiceInfo voiceInfo, ref RemoteVoiceOptions options);
 
         /// <summary>
@@ -145,7 +200,7 @@ namespace Photon.Voice
             this.logger.LogInfo("[PV] FrameBuffer stats Disposer: " + dc + " - " + dd + " = " + (dc - dd));
             this.logger.LogInfo("[PV] FrameBuffer stats Pinned: " + pp + " - " + pu + " = " + (pp - pu));
         }
-        
+
         public void SetRemoteVoiceDelayFrames(Codec codec, int delayFrames)
         {
             remoteVoiceDelayFrames[codec] = delayFrames;
@@ -223,30 +278,16 @@ namespace Photon.Voice
         /// </summary>
         /// <param name="voiceInfo">Outgoing stream parameters.</param>
         /// <param name="channelId">Transport channel specific to transport.</param>
-        /// <param name="encoder">Encoder producing the stream.</param>
+        /// <param name="options">Voice creation options.</param>
         /// <returns>Outgoing stream handler.</returns>
-        public LocalVoice CreateLocalVoice(VoiceInfo voiceInfo, int channelId = 0, IEncoder encoder = null)
+        public LocalVoice CreateLocalVoice(VoiceInfo voiceInfo, int channelId, VoiceCreateOptions options = default(VoiceCreateOptions))
         {
-            return (LocalVoice)createLocalVoice(channelId, (vId, chId) => new LocalVoice(this, encoder, vId, voiceInfo, chId));
+            return (LocalVoice)createLocalVoice(channelId, (vId, chId) => new LocalVoice(this, vId, voiceInfo, channelId, options));
         }
 
-        /// <summary>
-        /// Creates outgoing stream consuming sequence of values passed in array buffers of arbitrary length which repacked in frames of constant length for further processing and encoding.
-        /// </summary>
-        /// <typeparam name="T">Type of data consumed by outgoing stream (element type of array buffers).</typeparam>
-        /// <param name="voiceInfo">Outgoing stream parameters.</param>
-        /// <param name="frameSize">Size of buffer LocalVoiceFramed repacks input data stream to.</param>
-        /// <param name="channelId">Transport channel specific to transport.</param>
-        /// <param name="encoder">Encoder compressing data stream in pipeline.</param>
-        /// <returns>Outgoing stream handler.</returns>
-        public LocalVoiceFramed<T> CreateLocalVoiceFramed<T>(VoiceInfo voiceInfo, int frameSize, int channelId = 0, IEncoder encoder = null)
+        public LocalVoiceAudio<T> CreateLocalVoiceAudio<T>(VoiceInfo voiceInfo, IAudioDesc audioSourceDesc, int channelId, VoiceCreateOptions options = default(VoiceCreateOptions))
         {
-            return (LocalVoiceFramed<T>)createLocalVoice(channelId, (vId, chId) => new LocalVoiceFramed<T>(this, encoder, vId, voiceInfo, chId, frameSize));
-        }
-
-        public LocalVoiceAudio<T> CreateLocalVoiceAudio<T>(VoiceInfo voiceInfo, IAudioDesc audioSourceDesc, IEncoder encoder, int channelId)
-        {
-            return (LocalVoiceAudio<T>)createLocalVoice(channelId, (vId, chId) => LocalVoiceAudio<T>.Create(this, vId, encoder, voiceInfo, audioSourceDesc, chId));
+            return (LocalVoiceAudio<T>)createLocalVoice(channelId, (vId, chId) => LocalVoiceAudio<T>.Create(this, vId, voiceInfo, audioSourceDesc, channelId, options));
         }
 
         /// <summary>
@@ -257,12 +298,12 @@ namespace Photon.Voice
         /// <param name="source">Streaming audio source.</param>
         /// <param name="sampleType">Voice's audio sample type. If does not match source audio sample type, conversion will occur.</param>
         /// <param name="channelId">Transport channel specific to transport.</param>
-        /// <param name="encoder">Audio encoder. Set to null to use default Opus encoder.</param>
+        /// <param name="options">Voice creation options.</param>
         /// <returns>Outgoing stream handler.</returns>
         /// <remarks>
         /// audioSourceDesc.SamplingRate and voiceInfo.SamplingRate may do not match. Automatic resampling will occur in this case.
         /// </remarks>
-        public LocalVoice CreateLocalVoiceAudioFromSource(VoiceInfo voiceInfo, IAudioDesc source, AudioSampleType sampleType, IEncoder encoder = null, int channelId = 0)
+        public LocalVoice CreateLocalVoiceAudioFromSource(VoiceInfo voiceInfo, IAudioDesc source, AudioSampleType sampleType, int channelId, VoiceCreateOptions options = default(VoiceCreateOptions))
         {
             // resolve AudioSampleType.Source to concrete type for encoder creation
             if (sampleType == AudioSampleType.Source)
@@ -277,29 +318,30 @@ namespace Photon.Voice
                 }
             }
 
-            if (encoder == null)
+            if (options.Encoder == null)
             {
                 switch (sampleType)
                 {
                     case AudioSampleType.Float:
-                        encoder = Platform.CreateDefaultAudioEncoder<float>(logger, voiceInfo);
+                        options.Encoder = Platform.CreateDefaultAudioEncoder<float>(logger, voiceInfo);
                         break;
                     case AudioSampleType.Short:
-                        encoder = Platform.CreateDefaultAudioEncoder<short>(logger, voiceInfo);
+                        options.Encoder = Platform.CreateDefaultAudioEncoder<short>(logger, voiceInfo);
                         break;
-                }    
+                }
             }
-                
+
             if (source is IAudioPusher<float>)
             {
                 if (sampleType == AudioSampleType.Short)
                 {
                     logger.LogInfo("[PV] Creating local voice with source samples type conversion from IAudioPusher float to short.");
-                    var localVoice = CreateLocalVoiceAudio<short>(voiceInfo, source, encoder, channelId);
+                    var localVoice = CreateLocalVoiceAudio<short>(voiceInfo, source, channelId, options);
                     // we can safely reuse the same buffer in callbacks from native code
-                    // 
+                    //
                     var bufferFactory = new FactoryReusableArray<float>(0);
-                    ((IAudioPusher<float>)source).SetCallback(buf => {
+                    ((IAudioPusher<float>)source).SetCallback(buf =>
+                    {
                         var shortBuf = localVoice.BufferFactory.New(buf.Length);
                         AudioUtil.Convert(buf, shortBuf, buf.Length);
                         localVoice.PushDataAsync(shortBuf);
@@ -308,7 +350,7 @@ namespace Photon.Voice
                 }
                 else
                 {
-                    var localVoice = CreateLocalVoiceAudio<float>(voiceInfo, source, encoder, channelId);
+                    var localVoice = CreateLocalVoiceAudio<float>(voiceInfo, source, channelId, options);
                     ((IAudioPusher<float>)source).SetCallback(buf => localVoice.PushDataAsync(buf), localVoice.BufferFactory);
                     return localVoice;
                 }
@@ -318,9 +360,9 @@ namespace Photon.Voice
                 if (sampleType == AudioSampleType.Float)
                 {
                     logger.LogInfo("[PV] Creating local voice with source samples type conversion from IAudioPusher short to float.");
-                    var localVoice = CreateLocalVoiceAudio<float>(voiceInfo, source, encoder, channelId);
+                    var localVoice = CreateLocalVoiceAudio<float>(voiceInfo, source, channelId, options);
                     // we can safely reuse the same buffer in callbacks from native code
-                    // 
+                    //
                     var bufferFactory = new FactoryReusableArray<short>(0);
                     ((IAudioPusher<short>)source).SetCallback(buf =>
                     {
@@ -332,7 +374,7 @@ namespace Photon.Voice
                 }
                 else
                 {
-                    var localVoice = CreateLocalVoiceAudio<short>(voiceInfo, source, encoder, channelId);
+                    var localVoice = CreateLocalVoiceAudio<short>(voiceInfo, source, channelId, options);
                     ((IAudioPusher<short>)source).SetCallback(buf => localVoice.PushDataAsync(buf), localVoice.BufferFactory);
                     return localVoice;
                 }
@@ -342,14 +384,14 @@ namespace Photon.Voice
                 if (sampleType == AudioSampleType.Short)
                 {
                     logger.LogInfo("[PV] Creating local voice with source samples type conversion from IAudioReader float to short.");
-                    var localVoice = CreateLocalVoiceAudio<short>(voiceInfo, source, encoder, channelId);
-                    localVoice.LocalUserServiceable = new BufferReaderPushAdapterAsyncPoolFloatToShort(localVoice, source as IAudioReader<float>);
+                    var localVoice = CreateLocalVoiceAudio<short>(voiceInfo, source, channelId, options);
+                    localVoice.LocalUserServiceable = new BufferReaderPushAdapterAsyncPoolFloatToShort(source as IAudioReader<float>);
                     return localVoice;
                 }
                 else
                 {
-                    var localVoice = CreateLocalVoiceAudio<float>(voiceInfo, source, encoder, channelId);
-                    localVoice.LocalUserServiceable = new BufferReaderPushAdapterAsyncPool<float>(localVoice, source as IAudioReader<float>);
+                    var localVoice = CreateLocalVoiceAudio<float>(voiceInfo, source, channelId, options);
+                    localVoice.LocalUserServiceable = new BufferReaderPushAdapterAsyncPool<float>(source as IAudioReader<float>);
                     return localVoice;
                 }
             }
@@ -358,14 +400,14 @@ namespace Photon.Voice
                 if (sampleType == AudioSampleType.Float)
                 {
                     logger.LogInfo("[PV] Creating local voice with source samples type conversion from IAudioReader short to float.");
-                    var localVoice = CreateLocalVoiceAudio<float>(voiceInfo, source, encoder, channelId);
-                    localVoice.LocalUserServiceable = new BufferReaderPushAdapterAsyncPoolShortToFloat(localVoice, source as IAudioReader<short>);
+                    var localVoice = CreateLocalVoiceAudio<float>(voiceInfo, source, channelId, options);
+                    localVoice.LocalUserServiceable = new BufferReaderPushAdapterAsyncPoolShortToFloat(source as IAudioReader<short>);
                     return localVoice;
                 }
                 else
                 {
-                    var localVoice = CreateLocalVoiceAudio<short>(voiceInfo, source, encoder, channelId);
-                    localVoice.LocalUserServiceable = new BufferReaderPushAdapterAsyncPool<short>(localVoice, source as IAudioReader<short>);
+                    var localVoice = CreateLocalVoiceAudio<short>(voiceInfo, source, channelId, options);
+                    localVoice.LocalUserServiceable = new BufferReaderPushAdapterAsyncPool<short>(source as IAudioReader<short>);
                     return localVoice;
                 }
             }
@@ -383,10 +425,12 @@ namespace Photon.Voice
         /// <param name="voiceInfo">Outgoing stream parameters.</param>
         /// <param name="recorder">Video recorder.</param>
         /// <param name="channelId">Transport channel specific to transport.</param>
+        /// <param name="options">Voice creation options.</param>
         /// <returns>Outgoing stream handler.</returns>
-        public LocalVoiceVideo CreateLocalVoiceVideo(VoiceInfo voiceInfo, IVideoRecorder recorder, int channelId = 0)
+        public LocalVoiceVideo CreateLocalVoiceVideo(VoiceInfo voiceInfo, IVideoRecorder recorder, int channelId, VoiceCreateOptions options = default(VoiceCreateOptions))
         {
-            var lv = (LocalVoiceVideo)createLocalVoice(channelId, (vId, chId) => new LocalVoiceVideo(this, recorder.Encoder, vId, voiceInfo, chId));
+            options.Encoder = recorder.Encoder;
+            var lv = (LocalVoiceVideo)createLocalVoice(channelId, (vId, chId) => new LocalVoiceVideo(this, vId, voiceInfo, channelId, options));
             if (recorder is IVideoRecorderPusher)
             {
                 (recorder as IVideoRecorderPusher).VideoSink = lv;
@@ -436,9 +480,8 @@ namespace Photon.Voice
 
             if (this.transport.IsChannelJoined(channelId))
             {
-                sendVoicesInfoAndConfigFrame(new List<LocalVoice>() { v }, channelId, 0); // broadcast if joined
+                v.sendVoiceInfoAndConfigFrame();
             }
-            v.InterestGroup = this.GlobalInterestGroup;
         }
         /// <summary>
         /// Removes local voice (outgoing data stream).
@@ -451,60 +494,14 @@ namespace Photon.Voice
             this.localVoicesPerChannel[voice.channelId].Remove(voice);
             if (this.transport.IsChannelJoined(voice.channelId))
             {
-                this.transport.SendVoiceRemove(voice, voice.channelId, 0);
+                voice.sendVoiceRemove();
             }
 
             voice.Dispose();
             this.logger.LogInfo(voice.LogPrefix + " removed");
         }
 
-        private void sendChannelVoicesInfo(int channelId, int targetPlayerId)
-        {
-            if (this.transport.IsChannelJoined(channelId))
-            {
-                List<LocalVoice> voiceList;
-                if (this.localVoicesPerChannel.TryGetValue(channelId, out voiceList))
-                {
-                    sendVoicesInfoAndConfigFrame(voiceList, channelId, targetPlayerId);
-                }
-            }
-        }
-
-        internal void sendVoicesInfoAndConfigFrame(IEnumerable<LocalVoice> voiceList, int channelId, int targetPlayerId)
-        {
-            this.transport.SendVoicesInfo(voiceList, channelId, targetPlayerId);
-            foreach (var v in voiceList)
-            {
-                v.sendConfigFrame(targetPlayerId);
-            }
-
-            // send debug echo infos to myself if broadcast requested
-            if (targetPlayerId == 0)
-            {
-                var debugEchoVoices = localVoices.Values.Where(x => x.DebugEchoMode);
-                if (debugEchoVoices.Count() > 0)
-                {
-                    this.transport.SendVoicesInfo(debugEchoVoices, channelId, -1);
-                }
-            }
-        }
-
-        internal byte GlobalInterestGroup
-        {
-            get { return this.globalInterestGroup; }
-            set
-            {
-                this.globalInterestGroup = value;
-                foreach (var v in this.localVoices)
-                {
-                    v.Value.InterestGroup = this.globalInterestGroup;
-                }
-            }
-        }
-
         #region nonpublic
-
-        private byte globalInterestGroup;
 
         private Dictionary<byte, LocalVoice> localVoices = new Dictionary<byte, LocalVoice>();
         private Dictionary<int, List<LocalVoice>> localVoicesPerChannel = new Dictionary<int, List<LocalVoice>>();
@@ -565,10 +562,24 @@ namespace Photon.Voice
                 }
             }
         }
-        
-		public void onJoinChannel(int channel)
+
+        public void onJoinChannel(int channelId)
         {
-            sendChannelVoicesInfo(channel, 0);// my join, broadcast
+            if (this.localVoicesPerChannel.TryGetValue(channelId, out List<LocalVoice> voiceList))
+            {
+                foreach (var v in voiceList)
+                {
+                    v.onJoinChannel();
+                }
+            }
+        }
+
+        public void onJoinAllChannels()
+        {
+            foreach (var v in localVoices)
+            {
+                v.Value.onJoinChannel();
+            }
         }
 
         public void onLeaveChannel(int channel)
@@ -583,12 +594,47 @@ namespace Photon.Voice
 
         public void onPlayerJoin(int channelId, int playerId)
         {
-            sendChannelVoicesInfo(channelId, playerId);// send to new joined only
+            List<LocalVoice> voiceList;
+            if (this.localVoicesPerChannel.TryGetValue(channelId, out voiceList))
+            {
+                foreach (var v in voiceList)
+                {
+                    v.onPlayerJoin(playerId);
+                }
+            }
+        }
+        
+        // Joins all channels
+        public void onPlayerJoin(int playerId)
+        {
+            foreach (var v in localVoices)
+            {
+                v.Value.onPlayerJoin(playerId);
+            }
         }
 
         public void onPlayerLeave(int channelId, int playerId)
         {
             clearRemoteVoicesInChannelForPlayer(channelId, playerId);
+        }
+
+        // Leaves all channels
+        public void onPlayerLeave(int playerId)
+        {
+            Dictionary<byte, RemoteVoice> playerVoices;
+            if (remoteVoices.TryGetValue(playerId, out playerVoices))
+            {
+                List<byte> toRemove = new List<byte>();
+                foreach (var v in playerVoices)
+                {
+                    v.Value.removeAndDispose();
+                    toRemove.Add(v.Key);
+                }
+                foreach (var id in toRemove)
+                {
+                    playerVoices.Remove(id);
+                }
+            }
         }
 
         public void onVoiceInfo(int channelId, int playerId, byte voiceId, byte eventNumber, VoiceInfo info)
@@ -605,7 +651,7 @@ namespace Photon.Voice
             {
                 var voiceStr = " p#" + this.playerStr(playerId) + " v#" + voiceId + " ch#" + channelStr(channelId);
                 this.logger.LogInfo("[PV] " + voiceStr + " Info received: " + info.ToString() + " ev=" + eventNumber);
-                
+
                 var logPrefix = "[PV] Remote " + info.Codec + voiceStr;
                 RemoteVoiceOptions options = new RemoteVoiceOptions(logger, logPrefix, info);
                 if (this.OnRemoteVoiceInfoAction != null)
@@ -629,7 +675,7 @@ namespace Photon.Voice
             }
         }
 
-        public void onVoiceRemove(int channelId, int playerId, byte[] voiceIds)
+        public void onVoiceRemove(int playerId, byte[] voiceIds)
         {
             Dictionary<byte, RemoteVoice> playerVoices = null;
             if (remoteVoices.TryGetValue(playerId, out playerVoices))
@@ -640,23 +686,23 @@ namespace Photon.Voice
                     if (playerVoices.TryGetValue(voiceId, out voice))
                     {
                         playerVoices.Remove(voiceId);
-                        this.logger.LogInfo("[PV] Remote voice #" + voiceId + " of player " + this.playerStr(playerId) + " at channel " + this.channelStr(channelId) + " removed");
+                        this.logger.LogInfo("[PV] Remote voice #" + voiceId + " of player " + this.playerStr(playerId) + " at channel " + this.channelStr(voice.channelId) + " removed");
                         voice.removeAndDispose();
                     }
                     else
                     {
-                        this.logger.LogWarning("[PV] Remote voice #" + voiceId + " of player " + this.playerStr(playerId) + " at channel " + this.channelStr(channelId) + " not found when trying to remove");
+                        this.logger.LogWarning("[PV] Remote voice #" + voiceId + " of player " + this.playerStr(playerId) + " at channel " + this.channelStr(voice.channelId) + " not found when trying to remove");
                     }
                 }
             }
             else
             {
-                this.logger.LogWarning("[PV] Remote voice list of player " + this.playerStr(playerId) + " at channel " + this.channelStr(channelId) + " not found when trying to remove voice(s)");
+                this.logger.LogWarning("[PV] Remote voice list of player " + this.playerStr(playerId) + " not found when trying to remove voice(s)");
             }
         }
 
         Random rnd = new Random();
-        public void onFrame(int channelId, int playerId, byte voiceId, byte evNumber, ref FrameBuffer receivedBytes, bool isLocalPlayer)
+        public void onFrame(int playerId, byte voiceId, byte evNumber, ref FrameBuffer receivedBytes, bool isLocalPlayer)
         {
             if (isLocalPlayer)
             {
@@ -686,23 +732,21 @@ namespace Photon.Voice
 
             FramesReceived++;
 
-            Dictionary<byte, RemoteVoice> playerVoices = null;
-            if (remoteVoices.TryGetValue(playerId, out playerVoices))
+            if (remoteVoices.TryGetValue(playerId, out var playerVoices))
             {
 
-                RemoteVoice voice = null;
-                if (playerVoices.TryGetValue(voiceId, out voice))
+                if (playerVoices.TryGetValue(voiceId, out var voice))
                 {
                     voice.receiveBytes(ref receivedBytes, evNumber);
                 }
                 else
                 {
-                    this.logger.LogWarning("[PV] Frame event for not inited voice #" + voiceId + " of player " + this.playerStr(playerId) + " at channel " + this.channelStr(channelId));
+                    this.logger.LogWarning("[PV] Frame event for not inited voice #" + voiceId + " of player " + this.playerStr(playerId));
                 }
             }
             else
             {
-                this.logger.LogWarning("[PV] Frame event for voice #" + voiceId + " of not inited player " + this.playerStr(playerId) + " at channel " + this.channelStr(channelId));
+                this.logger.LogWarning("[PV] Frame event for voice #" + voiceId + " of not inited player " + this.playerStr(playerId));
             }
         }
 

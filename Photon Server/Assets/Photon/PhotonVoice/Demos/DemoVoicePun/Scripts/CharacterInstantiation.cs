@@ -16,9 +16,9 @@ namespace ExitGames.Demos.DemoPunVoice
     using UnityEngine;
     using Photon.Pun;
 
-    #if UNITY_EDITOR
+#if UNITY_EDITOR
     using UnityEditor;
-    #endif
+#endif
 
     public class CharacterInstantiation : MonoBehaviourPunCallbacks, IOnEventCallback
     {
@@ -36,21 +36,21 @@ namespace ExitGames.Demos.DemoPunVoice
         public delegate void OnCharacterInstantiated(GameObject character);
         public static event OnCharacterInstantiated CharacterInstantiated;
 
-        [SerializeField] 
+        [SerializeField]
         private byte manualInstantiationEventCode = 1;
 
         protected int lastUsedSpawnPointIndex = -1;
 
-        #pragma warning disable 649
+#pragma warning disable 649
         [SerializeField]
         private bool manualInstantiation;
 
-        [SerializeField] 
+        [SerializeField]
         private bool differentPrefabs;
 
         [SerializeField] private string localPrefabSuffix;
         [SerializeField] private string remotePrefabSuffix;
-        #pragma warning restore 649
+#pragma warning restore 649
 
         public override void OnJoinedRoom()
         {
@@ -133,7 +133,7 @@ namespace ExitGames.Demos.DemoPunVoice
             if (photonEvent.Code == this.manualInstantiationEventCode)
             {
                 object[] data = photonEvent.CustomData as object[];
-                int prefabIndex = (int) data[0];
+                int prefabIndex = (int)data[0];
                 GameObject prefab = this.PrefabsToInstantiate[prefabIndex];
                 Vector3 position = (Vector3)data[1];
                 Quaternion rotation = (Quaternion)data[2];
@@ -147,11 +147,11 @@ namespace ExitGames.Demos.DemoPunVoice
                     player = Instantiate(prefab, position, Quaternion.identity);
                 }
                 PhotonView photonView = player.GetComponent<PhotonView>();
-                photonView.ViewID = (int) data[3];
+                photonView.ViewID = (int)data[3];
             }
         }
 
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
 
         protected void OnValidate()
         {
@@ -165,8 +165,8 @@ namespace ExitGames.Demos.DemoPunVoice
                 this.SpawnPosition = null;
             }
         }
-        
-        #endif
+
+#endif
 
         /// <summary>
         /// Override this method with any custom code for coming up with a spawn location.
@@ -233,7 +233,7 @@ namespace ExitGames.Demos.DemoPunVoice
         }
     }
 
-    #if UNITY_EDITOR
+#if UNITY_EDITOR
     [CustomEditor(typeof(CharacterInstantiation))]
     public class CharacterInstantiationEditor : Editor
     {
@@ -353,9 +353,9 @@ namespace ExitGames.Demos.DemoPunVoice
                     }
                 }
             }
-                
+
             EditorGUILayout.EndVertical();
         }
     }
-    #endif
+#endif
 }

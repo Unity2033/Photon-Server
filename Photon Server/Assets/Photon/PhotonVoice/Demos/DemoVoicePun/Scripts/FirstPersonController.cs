@@ -8,11 +8,13 @@
 // <author>developer@photonengine.com</author>
 // ----------------------------------------------------------------------------
 
-namespace ExitGames.Demos.DemoPunVoice {
+namespace ExitGames.Demos.DemoPunVoice
+{
 
     using UnityEngine;
 
-    public class FirstPersonController : BaseController {
+    public class FirstPersonController : BaseController
+    {
 
         [SerializeField]
         private MouseLookHelper mouseLook = new MouseLookHelper();
@@ -20,16 +22,19 @@ namespace ExitGames.Demos.DemoPunVoice {
         private float oldYRotation;
         private Quaternion velRotation;
 
-        public Vector3 Velocity {
+        public Vector3 Velocity
+        {
             get { return this.rigidBody.velocity; }
         }
 
-        protected override void SetCamera() {
+        protected override void SetCamera()
+        {
             base.SetCamera();
             this.mouseLook.Init(this.transform, this.camTrans);
         }
 
-        protected override void Move(float h, float v) {
+        protected override void Move(float h, float v)
+        {
             // always move along the camera forward as it is the direction that it being aimed at
             Vector3 desiredMove = this.camTrans.forward * v + this.camTrans.right * h;
             desiredMove.x = desiredMove.x * this.speed;
@@ -38,11 +43,13 @@ namespace ExitGames.Demos.DemoPunVoice {
             this.rigidBody.velocity = desiredMove;
         }
 
-        private void Update() {
+        private void Update()
+        {
             this.RotateView();
         }
 
-        private void RotateView() {
+        private void RotateView()
+        {
             // get the rotation before it's changed
             this.oldYRotation = this.transform.eulerAngles.y;
             this.mouseLook.LookRotation(this.transform, this.camTrans);

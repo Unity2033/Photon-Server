@@ -85,4 +85,12 @@ namespace Photon.Voice
             t.Name = name;
         }
     }
+
+    // We need to decorate callbacks for Unity's IL2CPP with AOT.MonoPInvokeCallbackAttribute provided by Unity.
+    // This is a replacement that still works like the original attribute but also allows compile code without Unity assemblies.
+    public class MonoPInvokeCallbackAttribute : System.Attribute
+    {
+        private Type type;
+        public MonoPInvokeCallbackAttribute(Type t) { type = t; }
+    }
 }
