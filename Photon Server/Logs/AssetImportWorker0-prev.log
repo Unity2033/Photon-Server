@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2021.3/staging' branch; Version is '2021.3.8f1 (b30333d56e81) revision 11731763'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'ko' Physical Memory: 16317 MB
+OS: 'Windows 11  (10.0.22621) 64bit Professional' Language: 'ko' Physical Memory: 16317 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
@@ -15,7 +15,7 @@ C:/Users/Admin1/Documents/GitHub/Photon Server/Photon Server
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-52299
+60544
 Successfully changed project path to: C:/Users/Admin1/Documents/GitHub/Photon Server/Photon Server
 C:/Users/Admin1/Documents/GitHub/Photon Server/Photon Server
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ C:/Users/Admin1/Documents/GitHub/Photon Server/Photon Server
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 101.62 ms, found 6 plugins.
+Refreshing native plugins compatible for Editor in 119.41 ms, found 6 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.8f1 (b30333d56e81)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/Resources/UnitySubsystems
@@ -63,97 +63,97 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56696
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56304
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.018418 seconds.
+Registered in 0.031887 seconds.
 Native extension for WindowsStandalone target not found
 [usbmuxd] Start listen thread
 [usbmuxd] Listen thread started
 Native extension for iOS target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 86.57 ms, found 6 plugins.
+Refreshing native plugins compatible for Editor in 137.78 ms, found 6 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.720 seconds
+- Completed reload, in  1.185 seconds
 Domain Reload Profiling:
-	ReloadAssembly (720ms)
-		BeginReloadAssembly (105ms)
+	ReloadAssembly (1186ms)
+		BeginReloadAssembly (172ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (486ms)
-			LoadAssemblies (102ms)
+		EndReloadAssembly (808ms)
+			LoadAssemblies (165ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (108ms)
+			SetupTypeCache (148ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (24ms)
-			SetupLoadedEditorAssemblies (297ms)
+			RebuildScriptCaches (46ms)
+			SetupLoadedEditorAssemblies (517ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (70ms)
+				InitializePlatformSupportModulesInManaged (150ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (87ms)
-				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (85ms)
-				ProcessInitializeOnLoadMethodAttributes (53ms)
+				RefreshPlugins (138ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (141ms)
+				ProcessInitializeOnLoadMethodAttributes (86ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.021480 seconds.
+Registered in 0.042168 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\Admin1\Documents\GitHub\Photon Server\Photon Server\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\Admin1\Documents\GitHub\Photon Server\Photon Server\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Native extension for WindowsStandalone target not found
 Native extension for iOS target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 1.17 ms, found 6 plugins.
+Refreshing native plugins compatible for Editor in 1.00 ms, found 6 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.420 seconds
+- Completed reload, in  1.516 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1421ms)
-		BeginReloadAssembly (234ms)
+	ReloadAssembly (1517ms)
+		BeginReloadAssembly (254ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
+			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (119ms)
-		EndReloadAssembly (1054ms)
-			LoadAssemblies (137ms)
+			CreateAndSetChildDomain (121ms)
+		EndReloadAssembly (1126ms)
+			LoadAssemblies (155ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (260ms)
+			SetupTypeCache (279ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (54ms)
-			SetupLoadedEditorAssemblies (565ms)
+			RebuildScriptCaches (58ms)
+			SetupLoadedEditorAssemblies (595ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (29ms)
+				InitializePlatformSupportModulesInManaged (30ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (113ms)
-				ProcessInitializeOnLoadAttributes (375ms)
-				ProcessInitializeOnLoadMethodAttributes (29ms)
-				AfterProcessingInitializeOnLoad (17ms)
+				BeforeProcessingInitializeOnLoad (115ms)
+				ProcessInitializeOnLoadAttributes (404ms)
+				ProcessInitializeOnLoadMethodAttributes (28ms)
+				AfterProcessingInitializeOnLoad (16ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (20ms)
+			AwakeInstancesAfterBackupRestoration (15ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.92 ms, found 6 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 1.19 ms, found 6 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3923 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 69 unused Assets / (112.6 KB). Loaded Objects now: 4347.
-Memory consumption went from 140.7 MB to 140.6 MB.
-Total: 3.082900 ms (FindLiveObjects: 0.365700 ms CreateObjectMapping: 0.104300 ms MarkObjects: 2.496500 ms  DeleteObjects: 0.115700 ms)
+Unloading 3921 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 74 unused Assets / (112.4 KB). Loaded Objects now: 4340.
+Memory consumption went from 140.4 MB to 140.3 MB.
+Total: 3.801600 ms (FindLiveObjects: 0.470200 ms CreateObjectMapping: 0.118700 ms MarkObjects: 3.057600 ms  DeleteObjects: 0.153800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -167,61 +167,72 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 266517.930793 seconds.
+  Time since last request: 34139.333023 seconds.
+  path: Assets/Resources/Treasure Box.prefab
+  artifactKey: Guid(cc53239eb5c97954b93fa2f633eedc0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Treasure Box.prefab using Guid(cc53239eb5c97954b93fa2f633eedc0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bd91cea1692791b11318a185c76cf2e') in 0.153287 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.599628 seconds.
+  path: Assets/Scene/Photon Game.unity
+  artifactKey: Guid(10e4ec02744cad44584b9ce1132b41c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scene/Photon Game.unity using Guid(10e4ec02744cad44584b9ce1132b41c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a7279109f8e6333552da26881423606') in 0.009817 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 152.506013 seconds.
   path: Assets/Resources/Character.prefab
   artifactKey: Guid(71c2391404f0a954abbd6ca48b58e3d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Character.prefab using Guid(71c2391404f0a954abbd6ca48b58e3d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ef138bbf07d7a643dd4e71b184e2098') in 0.224010 seconds 
+Start importing Assets/Resources/Character.prefab using Guid(71c2391404f0a954abbd6ca48b58e3d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3068c15358e0610feea29a9ac000fb0') in 0.175147 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 729.310365 seconds.
-  path: Assets/Resources/Character.prefab
-  artifactKey: Guid(71c2391404f0a954abbd6ca48b58e3d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Character.prefab using Guid(71c2391404f0a954abbd6ca48b58e3d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26c7ef858b320f9aa58141f9d25c9f3a') in 0.061652 seconds 
+  Time since last request: 60.127816 seconds.
+  path: Assets/Script/PhotonPlayer.cs
+  artifactKey: Guid(1c61625babedd57429e3af7362692cbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Script/PhotonPlayer.cs using Guid(1c61625babedd57429e3af7362692cbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12a250df9ec088ee6586c76fe2ec934d') in 0.022973 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 581.434189 seconds.
-  path: Assets/PPT Data/Photon RPC.pptx
-  artifactKey: Guid(e52ca10d0f9619947b7e6090e7a09315) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PPT Data/Photon RPC.pptx using Guid(e52ca10d0f9619947b7e6090e7a09315) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbc28d47afb6086b28b1074f17b78e2a') in 0.017287 seconds 
+  Time since last request: 1462.757329 seconds.
+  path: Assets/PPT Data/Photon PlayFab.pptx
+  artifactKey: Guid(5713e50a22ec7d14a8134270dd846a72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PPT Data/Photon PlayFab.pptx using Guid(5713e50a22ec7d14a8134270dd846a72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '116b7c08fce3e73f4e5bc55aee60fcaf') in 0.013746 seconds 
 ========================================================================
-Received Import Request.
-  Time since last request: 2.265550 seconds.
-  path: Assets/PPT Data/Photon RPC 1.pptx
-  artifactKey: Guid(e0f35df490eb974419968265e7dc9c54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PPT Data/Photon RPC 1.pptx using Guid(e0f35df490eb974419968265e7dc9c54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8560e26cfc097030137a5587406ac09') in 0.010545 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 123.007568 seconds.
-  path: Assets/Resources/Character.prefab
-  artifactKey: Guid(71c2391404f0a954abbd6ca48b58e3d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Character.prefab using Guid(71c2391404f0a954abbd6ca48b58e3d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ac1bbb3976ac6b43a69d2132193e163') in 0.057052 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 339.261524 seconds.
-  path: Assets/Animator/New Animator Controller.controller
-  artifactKey: Guid(1ac3483ea0a63724792ef95050f01cc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animator/New Animator Controller.controller using Guid(1ac3483ea0a63724792ef95050f01cc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7513692922788d60a4ce5fbd6255e5df') in 0.017284 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2878.722919 seconds.
-  path: Assets/Resources/Character.prefab
-  artifactKey: Guid(71c2391404f0a954abbd6ca48b58e3d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Character.prefab using Guid(71c2391404f0a954abbd6ca48b58e3d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8b7d6d3182554cfe7c6b4fc871e1cbb') in 0.071319 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.537852 seconds.
-  path: Assets/Resources/Character.prefab
-  artifactKey: Guid(71c2391404f0a954abbd6ca48b58e3d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Character.prefab using Guid(71c2391404f0a954abbd6ca48b58e3d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b9c74764e2a638b05a550700a47cf30') in 0.058189 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 230.853160 seconds.
-  path: Assets/PPT Data/Photon Voice.pptx
-  artifactKey: Guid(e59e644461574ec4e9ebef4240ed047e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PPT Data/Photon Voice.pptx using Guid(e59e644461574ec4e9ebef4240ed047e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a62e28bf31d7933be9c839b1e11d4bf4') in 0.009951 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.598961 seconds.
-  path: Assets/PPT Data/Photon Voice 1.pptx
-  artifactKey: Guid(64922808815e6a848a5ec900a4aa1031) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PPT Data/Photon Voice 1.pptx using Guid(64922808815e6a848a5ec900a4aa1031) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a03e539a7f0f6a594d4066046fa2cd8e') in 0.009838 seconds 
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.020450 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Admin1\Documents\GitHub\Photon Server\Photon Server\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Admin1\Documents\GitHub\Photon Server\Photon Server\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 1.47 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.297 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1298ms)
+		BeginReloadAssembly (172ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (41ms)
+		EndReloadAssembly (1005ms)
+			LoadAssemblies (132ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (285ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (41ms)
+			SetupLoadedEditorAssemblies (516ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (37ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (90ms)
+				ProcessInitializeOnLoadAttributes (342ms)
+				ProcessInitializeOnLoadMethodAttributes (30ms)
+				AfterProcessingInitializeOnLoad (14ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (16ms)
+Platform modules already initialized, skipping

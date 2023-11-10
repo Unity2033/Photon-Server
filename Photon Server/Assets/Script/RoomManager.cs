@@ -6,20 +6,29 @@ using Photon.Realtime; // 어느 서버에 접속했을 때 이벤트를 호출�
 
 public class RoomManager : MonoBehaviourPunCallbacks
 {
-    public Button RoomCreate;
-    public InputField RoomName;
-    public InputField RoomPerson;
-    public Transform RoomContent;
+    public Button roomButton;
+    public InputField roomName;
+    public InputField roomPerson;
+    public Transform roomContent;
 
     // 룸 목록을 저장하기 위한 자료구조
-    Dictionary<string, RoomInfo> RoomCatalog = new Dictionary<string, RoomInfo>();
+    Dictionary<string, RoomInfo> roomDictionary = new Dictionary<string, RoomInfo>();
+
+    private void Start()
+    {
+        PhotonNetwork.ConnectUsingSettings();
+
+        Debug.Log(PhotonNetwork.IsConnected);
+
+        Debug.Log("냥");
+    }
 
     void Update()
     {
-        if(RoomName.text.Length > 0 && RoomPerson.text.Length > 0)
-            RoomCreate.interactable = true;
+        if(roomName.text.Length > 0 && roomPerson.text.Length > 0)
+            roomButton.interactable = true;
         else
-            RoomCreate.interactable = false;
+            roomButton.interactable = false;
     }
 
     // 룸에 입장한 후 호출되는 콜백 함수
@@ -34,7 +43,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
         RoomOptions Room = new RoomOptions();
 
         // 최대 접속자의 수를 설정합니다.
-        Room.MaxPlayers = byte.Parse(RoomPerson.text);
+        Room.MaxPlayers = byte.Parse(roomPerson.text);
 
         // 룸의 오픈 여부를 설정합니다.
         Room.IsOpen = true;
@@ -43,15 +52,17 @@ public class RoomManager : MonoBehaviourPunCallbacks
         Room.IsVisible = true;
 
         // 룸을 생성하는 함수
-        PhotonNetwork.CreateRoom(RoomName.text, Room);
+        PhotonNetwork.CreateRoom(roomName.text, Room);
     }
 
     // 해당 로비에 방 목록의 변경 사항이 있으면 호출(추가, 삭제, 참가)
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
-    {        
-       AllDeleteRoom();
-       UpdateRoom(roomList);
-       CreateRoomObject();
+    {
+        RemoveRoom();
+        UpdateRoom(roomList);
+        CreateRoomObject();
+
+        Debug.Log(roomList.Count);
     }
 
     void UpdateRoom(List<RoomInfo> roomList)
@@ -59,27 +70,30 @@ public class RoomManager : MonoBehaviourPunCallbacks
         for (int i = 0; i < roomList.Count; i++)
         {
             // 해당 이름이 RoomCatalog의 key 값으로 설정되어 있다면
-            if (RoomCatalog.ContainsKey(roomList[i].Name))
+            if (roomDictionary.ContainsKey(roomList[i].Name))
             {
                 // RemovedFromList : (true) 룸에서 삭제가 되었을 때
                 if (roomList[i].RemovedFromList)
                 {
-                    RoomCatalog.Remove(roomList[i].Name);
-                    continue;
+                    roomDictionary.Remove(roomList[i].Name);
+                }
+                else
+                {
+                    roomDictionary[roomList[i].Name] = roomList[i];
                 }
             }
-
-            RoomCatalog[roomList[i].Name] = roomList[i];
+            else
+            {
+                roomDictionary[roomList[i].Name] = roomList[i];
+            }
         }
     }
 
-    public void AllDeleteRoom()
+    public void RemoveRoom()
     {
-        // Transform 오브젝트에 있는 하위 오브젝트에 접근하여 전체 삭제를 시도합니다.
-        foreach(Transform trans in RoomContent)
+        foreach(Transform room in roomContent)
         {
-            // Transform이 가지고 있는 게임 오브젝트를 삭제합니다.
-            Destroy(trans.gameObject);
+            Destroy(room.gameObject);
         }
     }
 
@@ -87,13 +101,13 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public void CreateRoomObject()
     {
         // RoomCatalog에 여러 개의 Value값이 들어가있다면 RoomInfo에 넣어줍니다.
-        foreach (RoomInfo info in RoomCatalog.Values)
+        foreach (RoomInfo info in roomDictionary.Values)
         {
             // 룸을 생성합니다.
             GameObject room = Instantiate(Resources.Load<GameObject>("Room"));
 
             // RoomContect의 하위 오브젝트로 설정합니다.
-            room.transform.SetParent(RoomContent);
+            room.transform.SetParent(roomContent);
 
             // 룸 정보를 입력합니다.
             room.GetComponent<Information>().SetInfo(info.Name, info.PlayerCount, info.MaxPlayers);

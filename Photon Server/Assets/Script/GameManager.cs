@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public override void OnLeftRoom()
     {
-        PhotonNetwork.LoadLevel("Photon Room");
+        PhotonNetwork.LoadLevel("Photon Lobby");
     }
 
     public override void OnMasterClientSwitched(Player newMasterClient)
