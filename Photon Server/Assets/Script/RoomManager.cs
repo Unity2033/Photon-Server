@@ -14,15 +14,6 @@ public class RoomManager : MonoBehaviourPunCallbacks
     // 룸 목록을 저장하기 위한 자료구조
     Dictionary<string, RoomInfo> roomDictionary = new Dictionary<string, RoomInfo>();
 
-    private void Start()
-    {
-        PhotonNetwork.ConnectUsingSettings();
-
-        Debug.Log(PhotonNetwork.IsConnected);
-
-        Debug.Log("냥");
-    }
-
     void Update()
     {
         if(roomName.text.Length > 0 && roomPerson.text.Length > 0)
@@ -61,8 +52,6 @@ public class RoomManager : MonoBehaviourPunCallbacks
         RemoveRoom();
         UpdateRoom(roomList);
         CreateRoomObject();
-
-        Debug.Log(roomList.Count);
     }
 
     void UpdateRoom(List<RoomInfo> roomList)
@@ -96,7 +85,6 @@ public class RoomManager : MonoBehaviourPunCallbacks
             Destroy(room.gameObject);
         }
     }
-
 
     public void CreateRoomObject()
     {

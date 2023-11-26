@@ -1,454 +1,521 @@
 { "pid": 0, "tid": -1, "ph": "M", "name": "process_name", "args": { "name": "BeeDriver" } },
 { "pid": 0, "tid": -1, "ph": "M", "name": "process_sort_index", "args": { "sort_index": "-2" } },
 { "pid": 0, "tid": 1, "ph": "M", "name": "thread_name", "args": { "name": "" } },
-{ "pid": 0, "tid": 1, "ts": 1699601609814503, "dur": 295513, "ph": "X", "name": "Build Player", "args": {} },
-{ "pid": 0, "tid": 1, "ts": 1699601609814716, "dur": 1248, "ph": "X", "name": "WriteBuildProgramData", "args": {} },
-{ "pid": 0, "tid": 1, "ts": 1699601609815965, "dur": 281171, "ph": "X", "name": "Run Backend", "args": {} },
-{ "pid": 0, "tid": 1, "ts": 1699601610097138, "dur": 12876, "ph": "X", "name": "Finish", "args": {} },
-{ "pid": 0, "tid": 1, "ts": 1699601610110528, "dur": 9, "ph": "X", "name": "", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1699931681170350, "dur": 1727627, "ph": "X", "name": "Build Player", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1699931681170562, "dur": 19400, "ph": "X", "name": "WriteBuildProgramData", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1699931681189965, "dur": 42523, "ph": "X", "name": "Run Backend", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1699931681232519, "dur": 1340230, "ph": "X", "name": "BuildProgram", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1699931682572750, "dur": 312477, "ph": "X", "name": "Run Backend", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1699931682885229, "dur": 12747, "ph": "X", "name": "Finish", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1699931682898469, "dur": 11, "ph": "X", "name": "", "args": {} },
 { "cat":"", "pid":12345, "tid":0, "ts":0, "ph":"M", "name":"process_name", "args": { "name":"bee_backend" } }
-,{ "pid":12345, "tid":0, "ts":1699601609837983, "dur":997, "ph":"X", "name": "DriverInitData",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699601609838987, "dur":144, "ph":"X", "name": "Tundra",  "args": { "detail":"RemoveStaleOutputs" }}
-,{ "pid":12345, "tid":0, "ts":1699601609839164, "dur":18, "ph":"X", "name": "Tundra",  "args": { "detail":"PrepareNodes" }}
-,{ "pid":12345, "tid":0, "ts":1699601609839183, "dur":406, "ph":"X", "name": "Tundra",  "args": { "detail":"BuildQueueInit" }}
-,{ "pid":12345, "tid":0, "ts":1699601609839606, "dur":565, "ph":"X", "name": "EnqueueRequestedNodes",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699601609840171, "dur":1, "ph":"X", "name": "SortWorkingStack",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699601610090350, "dur":258, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699601610090609, "dur":13, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699601610090622, "dur":5, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699601610090627, "dur":8, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699601610090635, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699601610090637, "dur":6, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699601610090643, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699601610090645, "dur":6, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699601610090651, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699601610090653, "dur":6, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699601610090659, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699601610090661, "dur":6, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699601610090668, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699601610090669, "dur":7, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699601610090676, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699601610090678, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699601610090683, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699601610090685, "dur":6, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699601610090691, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699601610090693, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699601610090698, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699601610090700, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699601610090705, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699601610090707, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699601610090712, "dur":0, "ph":"X", "name": "SharedResourceDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699601610090727, "dur":2, "ph":"X", "name": "BuildQueueDestroyTail",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699601610090746, "dur":1415, "ph":"X", "name": "Tundra",  "args": { "detail":"Write AllBuiltNodes" }}
-,{ "pid":12345, "tid":1, "ts":1699601609839744, "dur":434, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699601609840180, "dur":4885, "ph":"X", "name": "CheckDagSignatures",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699601609845074, "dur":1, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"WriteText Library/Bee/artifacts/WinPlayerBuildProgram/Data/app.info" }}
-,{ "pid":12345, "tid":1, "ts":1699601609845075, "dur":41, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699601609845120, "dur":1, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/app.info" }}
-,{ "pid":12345, "tid":1, "ts":1699601609845121, "dur":33, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699601609845154, "dur":42, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":1, "ts":1699601609845196, "dur":34, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699601609845230, "dur":39, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Resources/unity default resources" }}
-,{ "pid":12345, "tid":1, "ts":1699601609845269, "dur":66, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699601609845335, "dur":41, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.VehiclesModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1699601609845376, "dur":43, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699601609845419, "dur":45, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1699601609845464, "dur":36, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699601609845500, "dur":34, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1699601609845534, "dur":43, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699601609845577, "dur":36, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1699601609845613, "dur":36, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699601609845649, "dur":39, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1699601609845689, "dur":37, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699601609845726, "dur":38, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.CoreModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1699601609845764, "dur":115, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699601609845880, "dur":46719, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.VisualScripting.State.dll" }}
-,{ "pid":12345, "tid":1, "ts":1699601609892600, "dur":56, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699601609892658, "dur":131875, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/PhotonUnityNetworking.Utilities.dll" }}
-,{ "pid":12345, "tid":1, "ts":1699601610024534, "dur":61, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699601610024597, "dur":65771, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699601609839783, "dur":409, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699601609840192, "dur":4878, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699601609845075, "dur":77, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":2, "ts":1699601609845152, "dur":40, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699601609845193, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
-,{ "pid":12345, "tid":2, "ts":1699601609845251, "dur":74, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699601609845325, "dur":74, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1699601609845399, "dur":42, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699601609845442, "dur":44, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.UIElementsNativeModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1699601609845486, "dur":43, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699601609845529, "dur":37, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.SubstanceModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1699601609845566, "dur":37, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699601609845604, "dur":62, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1699601609845666, "dur":43, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699601609845710, "dur":45, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.DirectorModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1699601609845756, "dur":92, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699601609845849, "dur":41, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.AIModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1699601609845890, "dur":56, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699601609845947, "dur":44206, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.Services.Core.Registration.dll" }}
-,{ "pid":12345, "tid":2, "ts":1699601609890155, "dur":65, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699601609890223, "dur":92329, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/PhotonVoice.API.dll" }}
-,{ "pid":12345, "tid":2, "ts":1699601609982553, "dur":63, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699601609982619, "dur":30, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/level3" }}
-,{ "pid":12345, "tid":2, "ts":1699601609982657, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699601609982673, "dur":1670, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/level3" }}
-,{ "pid":12345, "tid":2, "ts":1699601609984366, "dur":24, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/level1.resS" }}
-,{ "pid":12345, "tid":2, "ts":1699601609984394, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699601609984419, "dur":1020, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/level1.resS" }}
-,{ "pid":12345, "tid":2, "ts":1699601609985482, "dur":38, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/level0" }}
-,{ "pid":12345, "tid":2, "ts":1699601609985523, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699601609985528, "dur":830, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/level0" }}
-,{ "pid":12345, "tid":2, "ts":1699601609986382, "dur":27, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/globalgamemanagers.assets" }}
-,{ "pid":12345, "tid":2, "ts":1699601609986414, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699601609986420, "dur":878, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/globalgamemanagers.assets" }}
-,{ "pid":12345, "tid":2, "ts":1699601609987324, "dur":101, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/boot.config" }}
-,{ "pid":12345, "tid":2, "ts":1699601609987425, "dur":30, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699601609987456, "dur":102891, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1699601609839777, "dur":411, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1699601609840188, "dur":4886, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1699601609845074, "dur":68, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
-,{ "pid":12345, "tid":3, "ts":1699601609845142, "dur":45, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1699601609845188, "dur":54, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/2.0/web.config" }}
-,{ "pid":12345, "tid":3, "ts":1699601609845242, "dur":35, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1699601609845278, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.XRModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1699601609845331, "dur":37, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1699601609845368, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1699601609845421, "dur":40, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1699601609845461, "dur":41, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.TilemapModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1699601609845502, "dur":37, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1699601609845539, "dur":49, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1699601609845588, "dur":50, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1699601609845639, "dur":48, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.InputModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1699601609845687, "dur":38, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1699601609845725, "dur":109, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1699601609845834, "dur":37, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1699601609845872, "dur":40, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1699601609845912, "dur":36, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1699601609845948, "dur":775, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.Services.Core.Networking.dll" }}
-,{ "pid":12345, "tid":3, "ts":1699601609846723, "dur":42, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1699601609846766, "dur":788, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.Services.Core.Environments.Internal.dll" }}
-,{ "pid":12345, "tid":3, "ts":1699601609847554, "dur":40, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1699601609847595, "dur":38246, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.Services.Core.dll" }}
-,{ "pid":12345, "tid":3, "ts":1699601609885842, "dur":63, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1699601609885908, "dur":126308, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/PhotonVoice.dll" }}
-,{ "pid":12345, "tid":3, "ts":1699601610012216, "dur":56, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1699601610012274, "dur":78090, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699601609839762, "dur":420, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699601609840182, "dur":4890, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699601609845073, "dur":94, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/4.5/web.config" }}
-,{ "pid":12345, "tid":4, "ts":1699601609845167, "dur":42, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699601609845210, "dur":43, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server.exe" }}
-,{ "pid":12345, "tid":4, "ts":1699601609845254, "dur":80, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699601609845335, "dur":49, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.VFXModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1699601609845384, "dur":37, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699601609845422, "dur":40, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1699601609845462, "dur":45, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699601609845507, "dur":40, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.TerrainModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1699601609845547, "dur":38, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699601609845586, "dur":51, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.ProfilerModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1699601609845637, "dur":38, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699601609845676, "dur":39, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.HotReloadModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1699601609845715, "dur":35, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699601609845751, "dur":104, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1699601609845855, "dur":42, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699601609845897, "dur":84437, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.VisualScripting.Core.dll" }}
-,{ "pid":12345, "tid":4, "ts":1699601609930335, "dur":62, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699601609930400, "dur":78499, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/PhotonChat.dll" }}
-,{ "pid":12345, "tid":4, "ts":1699601610008900, "dur":70, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699601610008973, "dur":81371, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609839800, "dur":398, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609840199, "dur":4870, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609845080, "dur":82, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
-,{ "pid":12345, "tid":5, "ts":1699601609845162, "dur":41, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609845204, "dur":49, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
-,{ "pid":12345, "tid":5, "ts":1699601609845253, "dur":77, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609845330, "dur":62, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.VideoModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1699601609845393, "dur":41, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609845435, "dur":38, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.UNETModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1699601609845473, "dur":33, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609845507, "dur":40, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1699601609845547, "dur":39, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609845587, "dur":42, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.PhysicsModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1699601609845629, "dur":38, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609845668, "dur":47, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.IMGUIModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1699601609845715, "dur":39, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609845754, "dur":105, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1699601609845859, "dur":45, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609845905, "dur":829, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.Services.Core.Threading.dll" }}
-,{ "pid":12345, "tid":5, "ts":1699601609846734, "dur":45, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609846780, "dur":1536, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.Services.Core.Environments.dll" }}
-,{ "pid":12345, "tid":5, "ts":1699601609848317, "dur":42, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609848361, "dur":2886, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.Services.Core.Device.dll" }}
-,{ "pid":12345, "tid":5, "ts":1699601609851249, "dur":66, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609851318, "dur":31532, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.Services.Core.Configuration.dll" }}
-,{ "pid":12345, "tid":5, "ts":1699601609882851, "dur":339, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609883195, "dur":848, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/PhotonWebSocket.dll" }}
-,{ "pid":12345, "tid":5, "ts":1699601609884044, "dur":38, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609884083, "dur":57347, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/PhotonVoice.PUN.dll" }}
-,{ "pid":12345, "tid":5, "ts":1699601609941431, "dur":35, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609941467, "dur":31, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Plugins/x86_64/opus_egpv.dll" }}
-,{ "pid":12345, "tid":5, "ts":1699601609941498, "dur":27, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609941525, "dur":29, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Plugins/x86_64/webrtc-audio.dll" }}
-,{ "pid":12345, "tid":5, "ts":1699601609941554, "dur":22, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609941577, "dur":27, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Plugins/x86_64/AudioIn.dll" }}
-,{ "pid":12345, "tid":5, "ts":1699601609941604, "dur":29, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609941633, "dur":80, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/StreamingAssets/UnityServicesProjectConfiguration.json" }}
-,{ "pid":12345, "tid":5, "ts":1699601609941713, "dur":28, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609941741, "dur":27, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Resources/unity_builtin_extra" }}
-,{ "pid":12345, "tid":5, "ts":1699601609941801, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609942334, "dur":2334, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Resources/unity_builtin_extra" }}
-,{ "pid":12345, "tid":5, "ts":1699601609944694, "dur":26, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/sharedassets3.assets.resS" }}
-,{ "pid":12345, "tid":5, "ts":1699601609944725, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609944730, "dur":822, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/sharedassets3.assets.resS" }}
-,{ "pid":12345, "tid":5, "ts":1699601609945580, "dur":27, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/sharedassets3.assets" }}
-,{ "pid":12345, "tid":5, "ts":1699601609945613, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609945621, "dur":1503, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/sharedassets3.assets" }}
-,{ "pid":12345, "tid":5, "ts":1699601609947149, "dur":28, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/sharedassets2.assets.resS" }}
-,{ "pid":12345, "tid":5, "ts":1699601609947182, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609947188, "dur":1177, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/sharedassets2.assets.resS" }}
-,{ "pid":12345, "tid":5, "ts":1699601609948391, "dur":24, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/sharedassets2.assets" }}
-,{ "pid":12345, "tid":5, "ts":1699601609948420, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609948426, "dur":611, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/sharedassets2.assets" }}
-,{ "pid":12345, "tid":5, "ts":1699601609949060, "dur":24, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/sharedassets1.assets.resS" }}
-,{ "pid":12345, "tid":5, "ts":1699601609949107, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609949112, "dur":1674, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/sharedassets1.assets.resS" }}
-,{ "pid":12345, "tid":5, "ts":1699601609950809, "dur":24, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/sharedassets1.assets" }}
-,{ "pid":12345, "tid":5, "ts":1699601609950838, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609950843, "dur":635, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/sharedassets1.assets" }}
-,{ "pid":12345, "tid":5, "ts":1699601609951502, "dur":27, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/sharedassets0.assets.resS" }}
-,{ "pid":12345, "tid":5, "ts":1699601609951533, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609951539, "dur":1006, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/sharedassets0.assets.resS" }}
-,{ "pid":12345, "tid":5, "ts":1699601609952575, "dur":30, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/sharedassets0.assets" }}
-,{ "pid":12345, "tid":5, "ts":1699601609952610, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609952618, "dur":737, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/sharedassets0.assets" }}
-,{ "pid":12345, "tid":5, "ts":1699601609953379, "dur":86, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/ScriptingAssemblies.json" }}
-,{ "pid":12345, "tid":5, "ts":1699601609953465, "dur":28, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609953494, "dur":828, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/RuntimeInitializeOnLoads.json" }}
-,{ "pid":12345, "tid":5, "ts":1699601609954323, "dur":35, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609954359, "dur":27, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/resources.resource" }}
-,{ "pid":12345, "tid":5, "ts":1699601609954392, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609954399, "dur":1246, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/resources.resource" }}
-,{ "pid":12345, "tid":5, "ts":1699601609955670, "dur":40, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/resources.assets.resS" }}
-,{ "pid":12345, "tid":5, "ts":1699601609955736, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609955742, "dur":23901, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/resources.assets.resS" }}
-,{ "pid":12345, "tid":5, "ts":1699601609979673, "dur":28, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/resources.assets" }}
-,{ "pid":12345, "tid":5, "ts":1699601609979708, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609979718, "dur":3123, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/resources.assets" }}
-,{ "pid":12345, "tid":5, "ts":1699601609982867, "dur":26, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/level2.resS" }}
-,{ "pid":12345, "tid":5, "ts":1699601609982897, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609982902, "dur":750, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/level2.resS" }}
-,{ "pid":12345, "tid":5, "ts":1699601609983676, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/level2" }}
-,{ "pid":12345, "tid":5, "ts":1699601609983705, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609983710, "dur":641, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/level2" }}
-,{ "pid":12345, "tid":5, "ts":1699601609984372, "dur":23, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/level1" }}
-,{ "pid":12345, "tid":5, "ts":1699601609984420, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609984425, "dur":995, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/level1" }}
-,{ "pid":12345, "tid":5, "ts":1699601609985446, "dur":67, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/level0.resS" }}
-,{ "pid":12345, "tid":5, "ts":1699601609985518, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609985524, "dur":1262, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/level0.resS" }}
-,{ "pid":12345, "tid":5, "ts":1699601609986831, "dur":30, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/globalgamemanagers" }}
-,{ "pid":12345, "tid":5, "ts":1699601609986867, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699601609986875, "dur":833, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/globalgamemanagers" }}
-,{ "pid":12345, "tid":5, "ts":1699601609987734, "dur":102611, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699601609839829, "dur":376, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699601609840205, "dur":4876, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699601609845081, "dur":76, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":6, "ts":1699601609845157, "dur":45, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699601609845203, "dur":54, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/config" }}
-,{ "pid":12345, "tid":6, "ts":1699601609845257, "dur":86, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699601609845344, "dur":63, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1699601609845407, "dur":42, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699601609845449, "dur":44, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.UIElementsModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1699601609845493, "dur":41, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699601609845534, "dur":45, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1699601609845579, "dur":35, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699601609845615, "dur":43, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1699601609845658, "dur":36, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699601609845694, "dur":35, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.GameCenterModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1699601609845729, "dur":34, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699601609845764, "dur":95, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.AudioModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1699601609845859, "dur":41, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699601609845900, "dur":221078, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.TextMeshPro.dll" }}
-,{ "pid":12345, "tid":6, "ts":1699601610066980, "dur":65, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699601610067047, "dur":23302, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699601609839854, "dur":355, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699601609840209, "dur":4869, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699601609845080, "dur":77, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":7, "ts":1699601609845158, "dur":46, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699601609845205, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
-,{ "pid":12345, "tid":7, "ts":1699601609845263, "dur":73, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699601609845336, "dur":76, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1699601609845412, "dur":39, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699601609845451, "dur":148170, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.UI.dll" }}
-,{ "pid":12345, "tid":7, "ts":1699601609993622, "dur":67, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699601609993691, "dur":96652, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699601609839879, "dur":335, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699601609840214, "dur":4868, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699601609845082, "dur":81, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/4.0/web.config" }}
-,{ "pid":12345, "tid":8, "ts":1699601609845164, "dur":34, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699601609845198, "dur":47, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":8, "ts":1699601609845245, "dur":72, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699601609845318, "dur":37, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.WindModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1699601609845355, "dur":36, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699601609845392, "dur":38, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1699601609845431, "dur":33, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699601609845465, "dur":39, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1699601609845504, "dur":36, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699601609845541, "dur":37, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1699601609845578, "dur":39, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699601609845618, "dur":39, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1699601609845657, "dur":32, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699601609845689, "dur":37, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.GIModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1699601609845726, "dur":36, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699601609845763, "dur":87, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.ClothModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1699601609845851, "dur":47, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699601609845898, "dur":86, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll" }}
-,{ "pid":12345, "tid":8, "ts":1699601609845984, "dur":58, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699601609846043, "dur":52828, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.Services.Core.Internal.dll" }}
-,{ "pid":12345, "tid":8, "ts":1699601609898872, "dur":65, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699601609898941, "dur":164156, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/PhotonUnityNetworking.dll" }}
-,{ "pid":12345, "tid":8, "ts":1699601610063098, "dur":69, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699601610063170, "dur":27180, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1699601609839912, "dur":309, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1699601609840221, "dur":4862, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1699601609845085, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
-,{ "pid":12345, "tid":9, "ts":1699601609845142, "dur":45, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1699601609845189, "dur":38, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
-,{ "pid":12345, "tid":9, "ts":1699601609845227, "dur":36, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1699601609845263, "dur":78, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/websocket-sharp.dll" }}
-,{ "pid":12345, "tid":9, "ts":1699601609845341, "dur":47, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1699601609845389, "dur":49, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1699601609845438, "dur":43, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1699601609845482, "dur":46, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1699601609845528, "dur":57, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1699601609845585, "dur":47, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1699601609845633, "dur":45, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1699601609845678, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.GridModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1699601609845730, "dur":36, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1699601609845766, "dur":90, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1699601609845856, "dur":36, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1699601609845893, "dur":95061, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.VisualScripting.Flow.dll" }}
-,{ "pid":12345, "tid":9, "ts":1699601609940955, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1699601609941011, "dur":30, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Photon3Unity3D.dll" }}
-,{ "pid":12345, "tid":9, "ts":1699601609941041, "dur":25, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1699601609941067, "dur":27, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Newtonsoft.Json.dll" }}
-,{ "pid":12345, "tid":9, "ts":1699601609941094, "dur":25, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1699601609941119, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/netstandard.dll" }}
-,{ "pid":12345, "tid":9, "ts":1699601609941144, "dur":23, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1699601609941168, "dur":24, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/mscorlib.dll" }}
-,{ "pid":12345, "tid":9, "ts":1699601609941192, "dur":24, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1699601609941217, "dur":24, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Mono.Security.dll" }}
-,{ "pid":12345, "tid":9, "ts":1699601609941242, "dur":22, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1699601609941264, "dur":103827, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Assembly-CSharp.dll" }}
-,{ "pid":12345, "tid":9, "ts":1699601610045099, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1699601610045159, "dur":859, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Assembly-CSharp.dll" }}
-,{ "pid":12345, "tid":9, "ts":1699601610046041, "dur":44316, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1699601609839948, "dur":279, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1699601609840227, "dur":4858, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1699601609845088, "dur":79, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
-,{ "pid":12345, "tid":10, "ts":1699601609845167, "dur":39, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1699601609845207, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/UnityPlayer.dll" }}
-,{ "pid":12345, "tid":10, "ts":1699601609845264, "dur":78, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1699601609845343, "dur":72, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
-,{ "pid":12345, "tid":10, "ts":1699601609845415, "dur":39, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1699601609845455, "dur":39, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.TLSModule.dll" }}
-,{ "pid":12345, "tid":10, "ts":1699601609845494, "dur":37, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1699601609845532, "dur":46, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.StreamingModule.dll" }}
-,{ "pid":12345, "tid":10, "ts":1699601609845578, "dur":40, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1699601609845619, "dur":49, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.LocalizationModule.dll" }}
-,{ "pid":12345, "tid":10, "ts":1699601609845668, "dur":34, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1699601609845702, "dur":46, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
-,{ "pid":12345, "tid":10, "ts":1699601609845749, "dur":93, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1699601609845843, "dur":44, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
-,{ "pid":12345, "tid":10, "ts":1699601609845887, "dur":39, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1699601609845926, "dur":53277, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.Services.Core.Telemetry.dll" }}
-,{ "pid":12345, "tid":10, "ts":1699601609899204, "dur":40, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1699601609899245, "dur":135849, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/PhotonUnityNetworking.Demos.dll" }}
-,{ "pid":12345, "tid":10, "ts":1699601610035095, "dur":55, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1699601610035152, "dur":55209, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1699601609839966, "dur":267, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1699601609840233, "dur":4861, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1699601609845095, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":11, "ts":1699601609845153, "dur":53, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1699601609845208, "dur":60, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/UnityCrashHandler64.exe" }}
-,{ "pid":12345, "tid":11, "ts":1699601609845269, "dur":71, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1699601609845341, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
-,{ "pid":12345, "tid":11, "ts":1699601609845399, "dur":41, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1699601609845440, "dur":48, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.UIModule.dll" }}
-,{ "pid":12345, "tid":11, "ts":1699601609845488, "dur":40, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1699601609845529, "dur":42, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
-,{ "pid":12345, "tid":11, "ts":1699601609845571, "dur":49, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1699601609845621, "dur":42, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
-,{ "pid":12345, "tid":11, "ts":1699601609845663, "dur":41, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1699601609845705, "dur":35, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.dll" }}
-,{ "pid":12345, "tid":11, "ts":1699601609845741, "dur":99, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1699601609845841, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.AnimationModule.dll" }}
-,{ "pid":12345, "tid":11, "ts":1699601609845894, "dur":42, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1699601609845936, "dur":27866, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.Services.Core.Scheduler.dll" }}
-,{ "pid":12345, "tid":11, "ts":1699601609873803, "dur":63, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1699601609873869, "dur":652, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.Services.Core.Analytics.dll" }}
-,{ "pid":12345, "tid":11, "ts":1699601609874522, "dur":37, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1699601609874560, "dur":27, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.Xml.Linq.dll" }}
-,{ "pid":12345, "tid":11, "ts":1699601609874588, "dur":24, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1699601609874612, "dur":27, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.Xml.dll" }}
-,{ "pid":12345, "tid":11, "ts":1699601609874639, "dur":43, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1699601609874683, "dur":54, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.Transactions.dll" }}
-,{ "pid":12345, "tid":11, "ts":1699601609874737, "dur":30, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1699601609874768, "dur":36, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.ServiceModel.Internals.dll" }}
-,{ "pid":12345, "tid":11, "ts":1699601609874804, "dur":31, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1699601609874836, "dur":26, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.Security.dll" }}
-,{ "pid":12345, "tid":11, "ts":1699601609874862, "dur":24, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1699601609874886, "dur":26, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.Runtime.Serialization.dll" }}
-,{ "pid":12345, "tid":11, "ts":1699601609874912, "dur":22, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1699601609874934, "dur":24, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.Numerics.dll" }}
-,{ "pid":12345, "tid":11, "ts":1699601609874958, "dur":23, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1699601609874982, "dur":24, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.Net.Http.dll" }}
-,{ "pid":12345, "tid":11, "ts":1699601609875006, "dur":22, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1699601609875028, "dur":27, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.IO.Compression.FileSystem.dll" }}
-,{ "pid":12345, "tid":11, "ts":1699601609875055, "dur":21, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1699601609875077, "dur":24, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.IO.Compression.dll" }}
-,{ "pid":12345, "tid":11, "ts":1699601609875101, "dur":21, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1699601609875122, "dur":24, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.EnterpriseServices.dll" }}
-,{ "pid":12345, "tid":11, "ts":1699601609875146, "dur":22, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1699601609875168, "dur":24, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.Drawing.dll" }}
-,{ "pid":12345, "tid":11, "ts":1699601609875192, "dur":22, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1699601609875214, "dur":23, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.dll" }}
-,{ "pid":12345, "tid":11, "ts":1699601609875238, "dur":26, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1699601609875264, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.Data.dll" }}
-,{ "pid":12345, "tid":11, "ts":1699601609875290, "dur":20, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1699601609875311, "dur":28, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.Data.DataSetExtensions.dll" }}
-,{ "pid":12345, "tid":11, "ts":1699601609875339, "dur":21, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1699601609875361, "dur":23, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.Core.dll" }}
-,{ "pid":12345, "tid":11, "ts":1699601609875384, "dur":23, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1699601609875408, "dur":37, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.Configuration.dll" }}
-,{ "pid":12345, "tid":11, "ts":1699601609875445, "dur":24, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1699601609875470, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.ComponentModel.Composition.dll" }}
-,{ "pid":12345, "tid":11, "ts":1699601609875495, "dur":22, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1699601609875517, "dur":214736, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/PlayFab.dll" }}
-,{ "pid":12345, "tid":11, "ts":1699601610090254, "dur":59, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1699601610090317, "dur":1, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Player" }}
-,{ "pid":12345, "tid":11, "ts":1699601610090318, "dur":0, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1699601609839990, "dur":245, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1699601609840235, "dur":4840, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1699601609845078, "dur":81, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
-,{ "pid":12345, "tid":12, "ts":1699601609845159, "dur":44, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1699601609845203, "dur":45, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/browscap.ini" }}
-,{ "pid":12345, "tid":12, "ts":1699601609845248, "dur":75, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1699601609845324, "dur":69, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.VRModule.dll" }}
-,{ "pid":12345, "tid":12, "ts":1699601609845394, "dur":45, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1699601609845440, "dur":47, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.UmbraModule.dll" }}
-,{ "pid":12345, "tid":12, "ts":1699601609845487, "dur":103, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1699601609845590, "dur":44, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.Physics2DModule.dll" }}
-,{ "pid":12345, "tid":12, "ts":1699601609845634, "dur":40, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1699601609845674, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
-,{ "pid":12345, "tid":12, "ts":1699601609845730, "dur":37, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1699601609845767, "dur":88, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.ARModule.dll" }}
-,{ "pid":12345, "tid":12, "ts":1699601609845856, "dur":42, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1699601609845899, "dur":78013, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.Timeline.dll" }}
-,{ "pid":12345, "tid":12, "ts":1699601609923913, "dur":67, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1699601609923983, "dur":116194, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/PhotonRealtime.dll" }}
-,{ "pid":12345, "tid":12, "ts":1699601610040178, "dur":62, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1699601610040243, "dur":50119, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699601610093251, "dur":1418, "ph":"X", "name": "ProfilerWriteOutput" }
-,{ "pid": 0, "tid": 1, "ts": 1699601610110603, "dur": 458, "ph": "X", "name": "backend_profiler0.traceevents", "args": {} },
-{ "pid": 0, "tid": 1, "ts": 1699601610110518, "dur": 559, "ph": "X", "name": "Write chrome-trace events", "args": {} },
+,{ "pid":12345, "tid":0, "ts":1699931681218044, "dur":1293, "ph":"X", "name": "DriverInitData",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931681219345, "dur":154, "ph":"X", "name": "Tundra",  "args": { "detail":"RemoveStaleOutputs" }}
+,{ "pid":12345, "tid":0, "ts":1699931681219533, "dur":17, "ph":"X", "name": "Tundra",  "args": { "detail":"PrepareNodes" }}
+,{ "pid":12345, "tid":0, "ts":1699931681219551, "dur":330, "ph":"X", "name": "Tundra",  "args": { "detail":"BuildQueueInit" }}
+,{ "pid":12345, "tid":0, "ts":1699931681219907, "dur":558, "ph":"X", "name": "EnqueueRequestedNodes",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931681220465, "dur":1, "ph":"X", "name": "SortWorkingStack",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931681224266, "dur":76, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931681224342, "dur":181, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931681224523, "dur":5, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931681224528, "dur":26, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931681224554, "dur":4, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931681224558, "dur":8, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931681224566, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931681224568, "dur":6, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931681224574, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931681224576, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931681224582, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931681224583, "dur":6, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931681224589, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931681224591, "dur":6, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931681224597, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931681224599, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931681224604, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931681224606, "dur":6, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931681224612, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931681224614, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931681224619, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931681224621, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931681224626, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931681224628, "dur":7, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931681224635, "dur":0, "ph":"X", "name": "SharedResourceDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931681224636, "dur":2, "ph":"X", "name": "BuildQueueDestroyTail",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931681224652, "dur":1631, "ph":"X", "name": "Tundra",  "args": { "detail":"Write AllBuiltNodes" }}
+,{ "pid":12345, "tid":1, "ts":1699931681220016, "dur":455, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1699931681220473, "dur":3786, "ph":"X", "name": "CheckDagSignatures",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1699931681220125, "dur":367, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1699931681220492, "dur":3836, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1699931681220057, "dur":419, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1699931681220476, "dur":3868, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931681220081, "dur":400, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931681220481, "dur":3870, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1699931681220114, "dur":371, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1699931681220486, "dur":3852, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1699931681220152, "dur":347, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1699931681220499, "dur":3811, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1699931681220178, "dur":325, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1699931681220503, "dur":3799, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1699931681220205, "dur":304, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1699931681220509, "dur":3786, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1699931681220232, "dur":284, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1699931681220516, "dur":3771, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931681220259, "dur":262, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931681220521, "dur":3759, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1699931681220293, "dur":234, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1699931681220527, "dur":3747, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1699931681220314, "dur":218, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1699931681220532, "dur":3734, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931681227598, "dur":372, "ph":"X", "name": "ProfilerWriteOutput" }
+,{ "pid": 0, "tid": 1, "ts": 1699931682898555, "dur": 213, "ph": "X", "name": "backend_profiler0.traceevents", "args": {} },
+{ "pid": 35942, "tid": -1, "ph": "M", "name": "process_name", "args": { "name": "netcorerun.dll" } },
+{ "pid": 35942, "tid": -1, "ph": "M", "name": "process_sort_index", "args": { "sort_index": "-1" } },
+{ "pid": 35942, "tid": 1, "ph": "M", "name": "thread_name", "args": { "name": "" } },
+{ "pid": 35942, "tid": 1, "ts": 1699931682156873, "dur": 400352, "ph": "X", "name": "BuildProgram", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1699931682157732, "dur": 43036, "ph": "X", "name": "BuildProgramContextConstructor", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1699931682535303, "dur": 11921, "ph": "X", "name": "OutputData.Write", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1699931682547227, "dur": 9992, "ph": "X", "name": "Backend.Write", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1699931682547853, "dur": 8738, "ph": "X", "name": "JsonToString", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1699931682561100, "dur": 1123, "ph": "X", "name": "", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1699931682560397, "dur": 1846, "ph": "X", "name": "Write chrome-trace events", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1699931682898814, "dur": 136, "ph": "X", "name": "buildprogram0.traceevents", "args": {} },
+{ "cat":"", "pid":12345, "tid":0, "ts":0, "ph":"M", "name":"process_name", "args": { "name":"bee_backend" } }
+,{ "pid":12345, "tid":0, "ts":1699931682609429, "dur":1156, "ph":"X", "name": "DriverInitData",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931682610592, "dur":1941, "ph":"X", "name": "Tundra",  "args": { "detail":"RemoveStaleOutputs" }}
+,{ "pid":12345, "tid":0, "ts":1699931682612568, "dur":19, "ph":"X", "name": "Tundra",  "args": { "detail":"PrepareNodes" }}
+,{ "pid":12345, "tid":0, "ts":1699931682612588, "dur":320, "ph":"X", "name": "Tundra",  "args": { "detail":"BuildQueueInit" }}
+,{ "pid":12345, "tid":0, "ts":1699931682612923, "dur":613, "ph":"X", "name": "EnqueueRequestedNodes",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931682613536, "dur":1, "ph":"X", "name": "SortWorkingStack",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931682876175, "dur":189, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931682876364, "dur":63, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931682876427, "dur":53, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931682876480, "dur":9, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931682876489, "dur":3, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931682876492, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931682876497, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931682876499, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931682876504, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931682876505, "dur":6, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931682876511, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931682876513, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931682876518, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931682876520, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931682876525, "dur":3, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931682876528, "dur":6, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931682876534, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931682876535, "dur":6, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931682876541, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931682876542, "dur":6, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931682876548, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931682876550, "dur":6, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931682876556, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931682876557, "dur":7, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931682876564, "dur":0, "ph":"X", "name": "SharedResourceDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931682876588, "dur":1, "ph":"X", "name": "BuildQueueDestroyTail",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931682876601, "dur":1597, "ph":"X", "name": "Tundra",  "args": { "detail":"Write AllBuiltNodes" }}
+,{ "pid":12345, "tid":1, "ts":1699931682613103, "dur":439, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1699931682613544, "dur":4918, "ph":"X", "name": "CheckDagSignatures",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1699931682618478, "dur":1, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"WriteText Library/Bee/artifacts/WinPlayerBuildProgram/Data/app.info" }}
+,{ "pid":12345, "tid":1, "ts":1699931682618480, "dur":93, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1699931682618579, "dur":2, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/app.info" }}
+,{ "pid":12345, "tid":1, "ts":1699931682618581, "dur":85, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1699931682618667, "dur":98, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":1, "ts":1699931682618766, "dur":613, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1699931682619379, "dur":116, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
+,{ "pid":12345, "tid":1, "ts":1699931682619495, "dur":291, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1699931682619787, "dur":60, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.XRModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1699931682619847, "dur":923, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1699931682620771, "dur":37, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.UIElementsModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1699931682620808, "dur":625, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1699931682621434, "dur":39, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.Physics2DModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1699931682621473, "dur":195, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1699931682621669, "dur":26, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1699931682621695, "dur":58, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1699931682621753, "dur":28, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.HotReloadModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1699931682621781, "dur":205, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1699931682621986, "dur":88, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.ClothModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1699931682622074, "dur":363, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1699931682622438, "dur":40409, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.Services.Core.Registration.dll" }}
+,{ "pid":12345, "tid":1, "ts":1699931682662849, "dur":344, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1699931682663197, "dur":22809, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.Services.Core.Analytics.dll" }}
+,{ "pid":12345, "tid":1, "ts":1699931682686007, "dur":191, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1699931682686201, "dur":135207, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/PhotonUnityNetworking.Utilities.dll" }}
+,{ "pid":12345, "tid":1, "ts":1699931682821409, "dur":108, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1699931682821520, "dur":54667, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1699931682613160, "dur":405, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1699931682613565, "dur":4904, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1699931682618478, "dur":200, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":2, "ts":1699931682618678, "dur":1109, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1699931682619788, "dur":51, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.WindModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1699931682619840, "dur":860, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1699931682620701, "dur":62, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1699931682620764, "dur":352, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1699931682621117, "dur":35, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1699931682621152, "dur":177, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1699931682621330, "dur":37, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1699931682621367, "dur":64, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1699931682621431, "dur":33, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.PhysicsModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1699931682621464, "dur":46, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1699931682621510, "dur":29, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.LocalizationModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1699931682621539, "dur":277, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1699931682621817, "dur":30, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1699931682621847, "dur":61, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1699931682621908, "dur":38, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1699931682621946, "dur":278, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1699931682622225, "dur":37, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll" }}
+,{ "pid":12345, "tid":2, "ts":1699931682622262, "dur":360, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1699931682622623, "dur":53807, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.Services.Core.Internal.dll" }}
+,{ "pid":12345, "tid":2, "ts":1699931682676431, "dur":141, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1699931682676576, "dur":115919, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/PhotonVoice.dll" }}
+,{ "pid":12345, "tid":2, "ts":1699931682792496, "dur":108, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1699931682792607, "dur":83561, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1699931682613194, "dur":381, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1699931682613576, "dur":4898, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1699931682618478, "dur":174, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
+,{ "pid":12345, "tid":3, "ts":1699931682618652, "dur":1125, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1699931682619778, "dur":64, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server.exe" }}
+,{ "pid":12345, "tid":3, "ts":1699931682619842, "dur":39, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1699931682619881, "dur":33, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1699931682619914, "dur":796, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1699931682620711, "dur":40, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1699931682620751, "dur":970, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1699931682621722, "dur":32, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1699931682621754, "dur":59, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1699931682621814, "dur":30, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.GameCenterModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1699931682621844, "dur":60, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1699931682621905, "dur":29, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.DirectorModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1699931682621934, "dur":240, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1699931682622175, "dur":34, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.AIModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1699931682622209, "dur":57, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1699931682622267, "dur":218238, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.TextMeshPro.dll" }}
+,{ "pid":12345, "tid":3, "ts":1699931682840506, "dur":61, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1699931682840568, "dur":35613, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931682613127, "dur":422, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931682613550, "dur":4921, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931682618478, "dur":203, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/4.5/web.config" }}
+,{ "pid":12345, "tid":4, "ts":1699931682618681, "dur":1263, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931682619945, "dur":34, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699931682619980, "dur":721, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931682620701, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699931682620759, "dur":306, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931682621066, "dur":34, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699931682621100, "dur":199, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931682621300, "dur":28, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699931682621329, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931682621383, "dur":33, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699931682621416, "dur":72, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931682621488, "dur":41, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699931682621529, "dur":411, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931682621941, "dur":35, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699931682621976, "dur":417, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931682622394, "dur":49391, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.Services.Core.Telemetry.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699931682671786, "dur":91, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931682671877, "dur":34, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.Configuration.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699931682671911, "dur":400, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931682672312, "dur":55767, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/PhotonVoice.PUN.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699931682728079, "dur":123, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931682728204, "dur":44, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Plugins/x86_64/opus_egpv.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699931682728248, "dur":258, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931682728507, "dur":34, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Plugins/x86_64/webrtc-audio.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699931682728541, "dur":46, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931682728587, "dur":27, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Plugins/x86_64/AudioIn.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699931682728615, "dur":170, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931682728786, "dur":90, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/StreamingAssets/UnityServicesProjectConfiguration.json" }}
+,{ "pid":12345, "tid":4, "ts":1699931682728877, "dur":320, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931682729198, "dur":35, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Resources/unity_builtin_extra" }}
+,{ "pid":12345, "tid":4, "ts":1699931682729247, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931682729907, "dur":2358, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Resources/unity_builtin_extra" }}
+,{ "pid":12345, "tid":4, "ts":1699931682732295, "dur":27, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/sharedassets3.assets.resS" }}
+,{ "pid":12345, "tid":4, "ts":1699931682732327, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931682732334, "dur":792, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/sharedassets3.assets.resS" }}
+,{ "pid":12345, "tid":4, "ts":1699931682733149, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/sharedassets3.assets" }}
+,{ "pid":12345, "tid":4, "ts":1699931682733179, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931682733184, "dur":1370, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/sharedassets3.assets" }}
+,{ "pid":12345, "tid":4, "ts":1699931682734579, "dur":23, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/sharedassets2.assets" }}
+,{ "pid":12345, "tid":4, "ts":1699931682734607, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931682734612, "dur":682, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/sharedassets2.assets" }}
+,{ "pid":12345, "tid":4, "ts":1699931682735317, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/sharedassets1.assets.resS" }}
+,{ "pid":12345, "tid":4, "ts":1699931682735346, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931682735351, "dur":2006, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/sharedassets1.assets.resS" }}
+,{ "pid":12345, "tid":4, "ts":1699931682737384, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/sharedassets1.assets" }}
+,{ "pid":12345, "tid":4, "ts":1699931682737414, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931682737420, "dur":739, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/sharedassets1.assets" }}
+,{ "pid":12345, "tid":4, "ts":1699931682738183, "dur":23, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/sharedassets0.assets.resS" }}
+,{ "pid":12345, "tid":4, "ts":1699931682738211, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931682738216, "dur":819, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/sharedassets0.assets.resS" }}
+,{ "pid":12345, "tid":4, "ts":1699931682739059, "dur":24, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/sharedassets0.assets" }}
+,{ "pid":12345, "tid":4, "ts":1699931682739087, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931682739092, "dur":684, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/sharedassets0.assets" }}
+,{ "pid":12345, "tid":4, "ts":1699931682739799, "dur":78, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/ScriptingAssemblies.json" }}
+,{ "pid":12345, "tid":4, "ts":1699931682739878, "dur":50, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931682739928, "dur":15925, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/RuntimeInitializeOnLoads.json" }}
+,{ "pid":12345, "tid":4, "ts":1699931682755854, "dur":216, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931682756073, "dur":35, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/resources.resource" }}
+,{ "pid":12345, "tid":4, "ts":1699931682756116, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931682756125, "dur":1469, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/resources.resource" }}
+,{ "pid":12345, "tid":4, "ts":1699931682757620, "dur":27, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/resources.assets.resS" }}
+,{ "pid":12345, "tid":4, "ts":1699931682757653, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931682757660, "dur":25199, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/resources.assets.resS" }}
+,{ "pid":12345, "tid":4, "ts":1699931682782892, "dur":98, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/boot.config" }}
+,{ "pid":12345, "tid":4, "ts":1699931682782990, "dur":114, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699931682783104, "dur":93067, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1699931682613150, "dur":409, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1699931682613559, "dur":4908, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1699931682618478, "dur":174, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
+,{ "pid":12345, "tid":5, "ts":1699931682618652, "dur":267, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1699931682618920, "dur":201, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/2.0/web.config" }}
+,{ "pid":12345, "tid":5, "ts":1699931682619121, "dur":290, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1699931682619412, "dur":76, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":5, "ts":1699931682619488, "dur":51, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1699931682619540, "dur":79, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/UnityPlayer.dll" }}
+,{ "pid":12345, "tid":5, "ts":1699931682619619, "dur":226, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1699931682619847, "dur":55, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.VFXModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1699931682619902, "dur":810, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1699931682620713, "dur":46, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.UmbraModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1699931682620759, "dur":465, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1699931682621224, "dur":42, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.StreamingModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1699931682621266, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1699931682621320, "dur":27, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1699931682621347, "dur":56, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1699931682621404, "dur":28, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.ProfilerModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1699931682621432, "dur":62, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1699931682621494, "dur":33, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1699931682621527, "dur":174, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1699931682621701, "dur":28, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.IMGUIModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1699931682621729, "dur":63, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1699931682621793, "dur":27, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.GIModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1699931682621820, "dur":307, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1699931682622128, "dur":29, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.AnimationModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1699931682622157, "dur":50, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1699931682622207, "dur":84253, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.VisualScripting.Core.dll" }}
+,{ "pid":12345, "tid":5, "ts":1699931682706461, "dur":102, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1699931682706566, "dur":68438, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/PhotonChat.dll" }}
+,{ "pid":12345, "tid":5, "ts":1699931682775005, "dur":352, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1699931682775363, "dur":50, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/resources.assets" }}
+,{ "pid":12345, "tid":5, "ts":1699931682775424, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1699931682775446, "dur":7464, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/resources.assets" }}
+,{ "pid":12345, "tid":5, "ts":1699931682782946, "dur":93229, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1699931682613188, "dur":384, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1699931682613572, "dur":4910, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1699931682618483, "dur":190, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
+,{ "pid":12345, "tid":6, "ts":1699931682618673, "dur":823, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1699931682619497, "dur":100, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
+,{ "pid":12345, "tid":6, "ts":1699931682619598, "dur":242, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1699931682619841, "dur":39, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.VideoModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1699931682619880, "dur":825, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1699931682620705, "dur":46, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1699931682620751, "dur":417, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1699931682621169, "dur":38, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.TerrainModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1699931682621207, "dur":196, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1699931682621403, "dur":40, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1699931682621443, "dur":467, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1699931682621911, "dur":60, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.CoreModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1699931682621971, "dur":511, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1699931682622483, "dur":752, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.Services.Core.Networking.dll" }}
+,{ "pid":12345, "tid":6, "ts":1699931682623236, "dur":218, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1699931682623455, "dur":20976, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.Services.Core.Environments.Internal.dll" }}
+,{ "pid":12345, "tid":6, "ts":1699931682644432, "dur":345, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1699931682644780, "dur":673, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.Services.Core.Environments.dll" }}
+,{ "pid":12345, "tid":6, "ts":1699931682645454, "dur":69, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1699931682645524, "dur":26212, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.Services.Core.dll" }}
+,{ "pid":12345, "tid":6, "ts":1699931682671737, "dur":77, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1699931682671815, "dur":39, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.Core.dll" }}
+,{ "pid":12345, "tid":6, "ts":1699931682671855, "dur":253, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1699931682672109, "dur":203916, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/PlayFab.dll" }}
+,{ "pid":12345, "tid":6, "ts":1699931682876026, "dur":113, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1699931682876142, "dur":1, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Player" }}
+,{ "pid":12345, "tid":6, "ts":1699931682876143, "dur":0, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1699931682613220, "dur":363, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1699931682613583, "dur":4896, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1699931682618479, "dur":194, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":7, "ts":1699931682618674, "dur":798, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1699931682619473, "dur":88, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/browscap.ini" }}
+,{ "pid":12345, "tid":7, "ts":1699931682619561, "dur":220, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1699931682619782, "dur":60, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/websocket-sharp.dll" }}
+,{ "pid":12345, "tid":7, "ts":1699931682619842, "dur":901, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1699931682620744, "dur":36, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.UIElementsNativeModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1699931682620781, "dur":723, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1699931682621505, "dur":35, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1699931682621540, "dur":529, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1699931682622069, "dur":31, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.AudioModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1699931682622100, "dur":88, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1699931682622189, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1699931682622245, "dur":94, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1699931682622339, "dur":30694, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.Services.Core.Threading.dll" }}
+,{ "pid":12345, "tid":7, "ts":1699931682653034, "dur":87, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1699931682653123, "dur":35164, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.Services.Core.Configuration.dll" }}
+,{ "pid":12345, "tid":7, "ts":1699931682688288, "dur":129, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1699931682688420, "dur":165008, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/PhotonUnityNetworking.dll" }}
+,{ "pid":12345, "tid":7, "ts":1699931682853429, "dur":117, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1699931682853548, "dur":22628, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1699931682613246, "dur":343, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1699931682613589, "dur":4888, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1699931682618478, "dur":202, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":8, "ts":1699931682618680, "dur":1109, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1699931682619790, "dur":67, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.VRModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1699931682619857, "dur":931, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1699931682620789, "dur":154549, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.UI.dll" }}
+,{ "pid":12345, "tid":8, "ts":1699931682775339, "dur":147, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1699931682775489, "dur":39, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/level3" }}
+,{ "pid":12345, "tid":8, "ts":1699931682775535, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1699931682775551, "dur":1081, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/level3" }}
+,{ "pid":12345, "tid":8, "ts":1699931682776658, "dur":28, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/level2" }}
+,{ "pid":12345, "tid":8, "ts":1699931682776690, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1699931682776695, "dur":847, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/level2" }}
+,{ "pid":12345, "tid":8, "ts":1699931682777566, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/level1.resS" }}
+,{ "pid":12345, "tid":8, "ts":1699931682777594, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1699931682777599, "dur":849, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/level1.resS" }}
+,{ "pid":12345, "tid":8, "ts":1699931682778470, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/level1" }}
+,{ "pid":12345, "tid":8, "ts":1699931682778499, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1699931682778504, "dur":1084, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/level1" }}
+,{ "pid":12345, "tid":8, "ts":1699931682779611, "dur":26, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/level0.resS" }}
+,{ "pid":12345, "tid":8, "ts":1699931682779642, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1699931682779647, "dur":943, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/level0.resS" }}
+,{ "pid":12345, "tid":8, "ts":1699931682780613, "dur":27, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/level0" }}
+,{ "pid":12345, "tid":8, "ts":1699931682780644, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1699931682780649, "dur":754, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/level0" }}
+,{ "pid":12345, "tid":8, "ts":1699931682781427, "dur":27, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/globalgamemanagers.assets" }}
+,{ "pid":12345, "tid":8, "ts":1699931682781482, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1699931682781487, "dur":1101, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/globalgamemanagers.assets" }}
+,{ "pid":12345, "tid":8, "ts":1699931682782612, "dur":28, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/globalgamemanagers" }}
+,{ "pid":12345, "tid":8, "ts":1699931682782644, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1699931682782652, "dur":901, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/globalgamemanagers" }}
+,{ "pid":12345, "tid":8, "ts":1699931682783578, "dur":92592, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1699931682613275, "dur":320, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1699931682613596, "dur":4885, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1699931682618482, "dur":195, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
+,{ "pid":12345, "tid":9, "ts":1699931682618677, "dur":838, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1699931682619516, "dur":104, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
+,{ "pid":12345, "tid":9, "ts":1699931682619621, "dur":213, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1699931682619835, "dur":41, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1699931682619876, "dur":944, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1699931682620820, "dur":32, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.TLSModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1699931682620852, "dur":658, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1699931682621511, "dur":46, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1699931682621557, "dur":360, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1699931682621917, "dur":35, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1699931682621952, "dur":308, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1699931682622261, "dur":79854, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.Timeline.dll" }}
+,{ "pid":12345, "tid":9, "ts":1699931682702116, "dur":178, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1699931682702297, "dur":134731, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/PhotonRealtime.dll" }}
+,{ "pid":12345, "tid":9, "ts":1699931682837029, "dur":260, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1699931682837291, "dur":38904, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931682613306, "dur":296, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931682613602, "dur":4878, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931682618480, "dur":199, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/4.0/web.config" }}
+,{ "pid":12345, "tid":10, "ts":1699931682618679, "dur":862, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931682619542, "dur":82, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/UnityCrashHandler64.exe" }}
+,{ "pid":12345, "tid":10, "ts":1699931682619624, "dur":237, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931682619862, "dur":46, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.VehiclesModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1699931682619909, "dur":803, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931682620714, "dur":44, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.UIModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1699931682620758, "dur":240, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931682620999, "dur":34, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1699931682621033, "dur":71, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931682621104, "dur":32, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1699931682621136, "dur":52, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931682621188, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1699931682621213, "dur":561, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931682621775, "dur":31, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.GridModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1699931682621806, "dur":274, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931682622081, "dur":33, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1699931682622114, "dur":75, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931682622190, "dur":47000, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.VisualScripting.State.dll" }}
+,{ "pid":12345, "tid":10, "ts":1699931682669191, "dur":136, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931682669330, "dur":37, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.Xml.Linq.dll" }}
+,{ "pid":12345, "tid":10, "ts":1699931682669367, "dur":397, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931682669765, "dur":38, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.Xml.dll" }}
+,{ "pid":12345, "tid":10, "ts":1699931682669804, "dur":185, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931682669990, "dur":34, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.Transactions.dll" }}
+,{ "pid":12345, "tid":10, "ts":1699931682670024, "dur":323, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931682670348, "dur":45, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.ServiceModel.Internals.dll" }}
+,{ "pid":12345, "tid":10, "ts":1699931682670393, "dur":56, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931682670450, "dur":29, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.Security.dll" }}
+,{ "pid":12345, "tid":10, "ts":1699931682670480, "dur":179, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931682670660, "dur":32, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.Runtime.Serialization.dll" }}
+,{ "pid":12345, "tid":10, "ts":1699931682670693, "dur":45, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931682670739, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.Numerics.dll" }}
+,{ "pid":12345, "tid":10, "ts":1699931682670765, "dur":163, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931682670929, "dur":27, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.Net.Http.dll" }}
+,{ "pid":12345, "tid":10, "ts":1699931682670956, "dur":44, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931682671000, "dur":26, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.IO.Compression.FileSystem.dll" }}
+,{ "pid":12345, "tid":10, "ts":1699931682671026, "dur":45, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931682671072, "dur":24, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.IO.Compression.dll" }}
+,{ "pid":12345, "tid":10, "ts":1699931682671096, "dur":62, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931682671159, "dur":29, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.EnterpriseServices.dll" }}
+,{ "pid":12345, "tid":10, "ts":1699931682671188, "dur":47, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931682671235, "dur":28, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.Drawing.dll" }}
+,{ "pid":12345, "tid":10, "ts":1699931682671263, "dur":49, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931682671312, "dur":30, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.dll" }}
+,{ "pid":12345, "tid":10, "ts":1699931682671342, "dur":195, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931682671538, "dur":30, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.Data.dll" }}
+,{ "pid":12345, "tid":10, "ts":1699931682671568, "dur":228, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931682671799, "dur":45, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.Data.DataSetExtensions.dll" }}
+,{ "pid":12345, "tid":10, "ts":1699931682671844, "dur":218, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931682672063, "dur":35, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/System.ComponentModel.Composition.dll" }}
+,{ "pid":12345, "tid":10, "ts":1699931682672098, "dur":178, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931682672277, "dur":19954, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/PhotonWebSocket.dll" }}
+,{ "pid":12345, "tid":10, "ts":1699931682692232, "dur":548, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931682692785, "dur":121791, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/PhotonUnityNetworking.Demos.dll" }}
+,{ "pid":12345, "tid":10, "ts":1699931682814578, "dur":164, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1699931682814747, "dur":61462, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1699931682613328, "dur":279, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1699931682613607, "dur":4877, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1699931682618484, "dur":187, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":11, "ts":1699931682618672, "dur":535, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1699931682619207, "dur":69, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
+,{ "pid":12345, "tid":11, "ts":1699931682619276, "dur":147, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1699931682619426, "dur":98, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/config" }}
+,{ "pid":12345, "tid":11, "ts":1699931682619524, "dur":256, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1699931682619781, "dur":87, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Resources/unity default resources" }}
+,{ "pid":12345, "tid":11, "ts":1699931682619868, "dur":124, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1699931682619993, "dur":40, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1699931682620033, "dur":668, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1699931682620702, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1699931682620759, "dur":184, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1699931682620943, "dur":30, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.TilemapModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1699931682620974, "dur":228, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1699931682621203, "dur":33, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.SubstanceModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1699931682621236, "dur":644, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1699931682621881, "dur":30, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.dll" }}
+,{ "pid":12345, "tid":11, "ts":1699931682621911, "dur":202, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1699931682622114, "dur":33, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.ARModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1699931682622147, "dur":56, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1699931682622203, "dur":93973, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.VisualScripting.Flow.dll" }}
+,{ "pid":12345, "tid":11, "ts":1699931682716177, "dur":134, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1699931682716314, "dur":34, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Photon3Unity3D.dll" }}
+,{ "pid":12345, "tid":11, "ts":1699931682716348, "dur":237, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1699931682716586, "dur":33, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Newtonsoft.Json.dll" }}
+,{ "pid":12345, "tid":11, "ts":1699931682716620, "dur":232, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1699931682716853, "dur":35, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/netstandard.dll" }}
+,{ "pid":12345, "tid":11, "ts":1699931682716888, "dur":173, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1699931682717062, "dur":34, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/mscorlib.dll" }}
+,{ "pid":12345, "tid":11, "ts":1699931682717096, "dur":196, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1699931682717293, "dur":34, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Mono.Security.dll" }}
+,{ "pid":12345, "tid":11, "ts":1699931682717327, "dur":51, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1699931682717378, "dur":97920, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Assembly-CSharp.dll" }}
+,{ "pid":12345, "tid":11, "ts":1699931682815307, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1699931682815362, "dur":1038, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Assembly-CSharp.dll" }}
+,{ "pid":12345, "tid":11, "ts":1699931682816425, "dur":59777, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1699931682613356, "dur":256, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1699931682613612, "dur":4861, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1699931682618477, "dur":189, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
+,{ "pid":12345, "tid":12, "ts":1699931682618666, "dur":1301, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1699931682619968, "dur":38, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1699931682620006, "dur":704, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1699931682620711, "dur":47, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.UNETModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1699931682620758, "dur":793, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1699931682621552, "dur":31, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.InputModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1699931682621583, "dur":591, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1699931682622174, "dur":38, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1699931682622212, "dur":191, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1699931682622404, "dur":29285, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.Services.Core.Scheduler.dll" }}
+,{ "pid":12345, "tid":12, "ts":1699931682651690, "dur":262, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1699931682651954, "dur":25009, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/Unity.Services.Core.Device.dll" }}
+,{ "pid":12345, "tid":12, "ts":1699931682676963, "dur":76, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1699931682677040, "dur":113905, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/nwond/OneDrive/ /Photon-Server/Build/Photon Server_Data/Managed/PhotonVoice.API.dll" }}
+,{ "pid":12345, "tid":12, "ts":1699931682790946, "dur":133, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1699931682791082, "dur":85085, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699931682879625, "dur":1462, "ph":"X", "name": "ProfilerWriteOutput" }
+,{ "pid": 0, "tid": 1, "ts": 1699931682898992, "dur": 355, "ph": "X", "name": "backend_profiler1.traceevents", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1699931682898454, "dur": 905, "ph": "X", "name": "Write chrome-trace events", "args": {} },

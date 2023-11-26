@@ -427,13 +427,13 @@
 "Assets/Photon/PhotonVoice/Demos/DemoVoiceUI/Scripts/SidebarToggle.cs"
 "Assets/Photon/PhotonVoice/Demos/DemoVoiceUI/Scripts/UiExtensions.cs"
 "Assets/Photon/PhotonVoice/Demos/Fusion/DemoNetworkObject/PrefabSpawner.cs"
+"Assets/Script/Alarm.cs"
 "Assets/Script/ChatManager.cs"
 "Assets/Script/ConnectServer.cs"
 "Assets/Script/GameManager.cs"
 "Assets/Script/Information.cs"
-"Assets/Script/NotificationManager.cs"
 "Assets/Script/PhotonPlayer.cs"
-"Assets/Script/PhotonSetting.cs"
+"Assets/Script/PlayfabManager.cs"
 "Assets/Script/RoomManager.cs"
 -langversion:9.0
 
