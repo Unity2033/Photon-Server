@@ -17,7 +17,7 @@ public class Alarm : MonoBehaviour
 
         window.GetComponent<Alarm>().content.text = message;
 
-        window.GetComponent<Alarm>().content.fontSize = 50;
+        window.GetComponent<Alarm>().content.fontSize = 65;
 
         window.GetComponent<Alarm>().content.alignment = TextAnchor.MiddleCenter;
     }

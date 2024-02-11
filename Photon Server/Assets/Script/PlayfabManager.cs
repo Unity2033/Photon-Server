@@ -23,14 +23,9 @@ public class PlayfabManager : MonoBehaviourPunCallbacks
         Alarm.Show(result.ToString(), AlarmType.Alarm);
     }
 
-    public void Failure(PlayFabError error)
-    {
-        Alarm.Show(error.GenerateErrorReport(), AlarmType.Alarm);
-    }
-
     public void SignUp()
     {
-        // RegisterPlayFabUserRequest : 서버에 유저를 등록하기 위한 클래스 
+        // RegisterPlayFabUserRequest : ?�버???��?�??�록?�기 ?�한 ?�래??
         var request = new RegisterPlayFabUserRequest
         {
             Email = email.text,
@@ -60,5 +55,10 @@ public class PlayfabManager : MonoBehaviourPunCallbacks
             Success,
             Failure
         ); 
+    }
+
+    public void Failure(PlayFabError error)
+    {
+        Alarm.Show(error.GenerateErrorReport(), AlarmType.Alarm);
     }
 }

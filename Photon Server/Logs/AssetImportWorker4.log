@@ -1,0 +1,361 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.8f1 (b30333d56e81) revision 11731763'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22631) 64bit Core' Language: 'ko' Physical Memory: 16317 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.8f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker4
+-projectPath
+C:/Users/nwond/OneDrive/바탕 화면/Photon-Server/Photon Server
+-logFile
+Logs/AssetImportWorker4.log
+-srvPort
+51782
+Successfully changed project path to: C:/Users/nwond/OneDrive/바탕 화면/Photon-Server/Photon Server
+C:/Users/nwond/OneDrive/바탕 화면/Photon-Server/Photon Server
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 104.59 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.8f1 (b30333d56e81)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/nwond/OneDrive/바탕 화면/Photon-Server/Photon Server/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3060 (ID=0x2544)
+    Vendor:   NVIDIA
+    VRAM:     8036 MB
+    Driver:   31.0.15.5123
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56136
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.004274 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 89.03 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.637 seconds
+Domain Reload Profiling:
+	ReloadAssembly (637ms)
+		BeginReloadAssembly (74ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (455ms)
+			LoadAssemblies (73ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (116ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (26ms)
+			SetupLoadedEditorAssemblies (266ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (53ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (89ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (84ms)
+				ProcessInitializeOnLoadMethodAttributes (38ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.007688 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\nwond\OneDrive\바탕 화면\Photon-Server\Photon Server\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\nwond\OneDrive\바탕 화면\Photon-Server\Photon Server\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 1.75 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.337 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1338ms)
+		BeginReloadAssembly (199ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (125ms)
+		EndReloadAssembly (1031ms)
+			LoadAssemblies (83ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (305ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (70ms)
+			SetupLoadedEditorAssemblies (513ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (15ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (103ms)
+				ProcessInitializeOnLoadAttributes (360ms)
+				ProcessInitializeOnLoadMethodAttributes (26ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 1.13 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3921 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 74 unused Assets / (112.4 KB). Loaded Objects now: 4340.
+Memory consumption went from 144.9 MB to 144.8 MB.
+Total: 3.772300 ms (FindLiveObjects: 0.405100 ms CreateObjectMapping: 0.111100 ms MarkObjects: 3.103900 ms  DeleteObjects: 0.150400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 632729.477150 seconds.
+  path: Assets/Resources/Ghost.prefab
+  artifactKey: Guid(5c40f7af00e6b5348847d8e3182a4fb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Ghost.prefab using Guid(5c40f7af00e6b5348847d8e3182a4fb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a71a4a32287dab3a2b6a595e7995ab7') in 0.132455 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 522.107164 seconds.
+  path: Assets/Zololgo/FlatPoly Floating Islands
+  artifactKey: Guid(17cffc8d1461e9c4aa2517e3529b0327) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Zololgo/FlatPoly Floating Islands using Guid(17cffc8d1461e9c4aa2517e3529b0327) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3125980ee1b94a96d33233e8b1ae71eb') in 0.007314 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.590057 seconds.
+  path: Assets/Zololgo/FlatPoly Floating Islands/Models
+  artifactKey: Guid(c806293ad883db2449b148806b8cd08a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Zololgo/FlatPoly Floating Islands/Models using Guid(c806293ad883db2449b148806b8cd08a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20c043c70d4e27c564a6d9a7b2e9aaf1') in 0.006757 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.055843 seconds.
+  path: Assets/Zololgo/FlatPoly Floating Islands/Models/floating_islands_environment.obj
+  artifactKey: Guid(3dff5c602fa2a3a45b81246f45003770) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Zololgo/FlatPoly Floating Islands/Models/floating_islands_environment.obj using Guid(3dff5c602fa2a3a45b81246f45003770) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e91be528751aeb415dba1822c0a9238') in 0.349671 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.269059 seconds.
+  path: Assets/Zololgo/FlatPoly Floating Islands/Materials/Floating Islands Base.mat
+  artifactKey: Guid(e4684a765ffa43d4caa4ec942f89f91d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Zololgo/FlatPoly Floating Islands/Materials/Floating Islands Base.mat using Guid(e4684a765ffa43d4caa4ec942f89f91d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d6311e15ff0f57ec5153ada21c6814a') in 0.027103 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 152.647863 seconds.
+  path: Assets/LowPolyFPSLite/LowPolyFPSLite_2021.3.0_HDRP_v1.0.unitypackage
+  artifactKey: Guid(794ee5cb61c74864fa0ba7639fed2e73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/LowPolyFPSLite/LowPolyFPSLite_2021.3.0_HDRP_v1.0.unitypackage using Guid(794ee5cb61c74864fa0ba7639fed2e73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fdf8cc4b0d48688633cd4742821de233') in 0.009396 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.870623 seconds.
+  path: Assets/LowPolyFPSLite/LowPolyFPSLite_2021.3.0_URP_v1.0.unitypackage
+  artifactKey: Guid(718863dcff53b784aa0ffc114381cdd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/LowPolyFPSLite/LowPolyFPSLite_2021.3.0_URP_v1.0.unitypackage using Guid(718863dcff53b784aa0ffc114381cdd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a66e6d0cecd63eecd3e1cb527f290bb3') in 0.007938 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.783574 seconds.
+  path: Assets/LowPolyFPSLite/Scenes
+  artifactKey: Guid(6820b6361cdcb5140b106422cfefda03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/LowPolyFPSLite/Scenes using Guid(6820b6361cdcb5140b106422cfefda03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a8ba18281e69c1d00e3f0076f57096c') in 0.007357 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.288079 seconds.
+  path: Assets/LowPolyFPSLite/Scenes/LowPolyFPS_Lite_Overview.unity
+  artifactKey: Guid(3063d51db209e0e4e88383831cc7f16c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/LowPolyFPSLite/Scenes/LowPolyFPS_Lite_Overview.unity using Guid(3063d51db209e0e4e88383831cc7f16c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1c1bb00e197ddc9cbbc1b698c7ed504') in 0.006969 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.076875 seconds.
+  path: Assets/LowPolyFPSLite/Scenes/LowPolyFPS_Lite_Demo.unity
+  artifactKey: Guid(130de191e9bf7de41a659f68e5741ed0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/LowPolyFPSLite/Scenes/LowPolyFPS_Lite_Demo.unity using Guid(130de191e9bf7de41a659f68e5741ed0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07315350891ca93f3ba79478054161b6') in 0.008364 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.207233 seconds.
+  path: Assets/Scene/Photon Game.unity
+  artifactKey: Guid(10e4ec02744cad44584b9ce1132b41c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scene/Photon Game.unity using Guid(10e4ec02744cad44584b9ce1132b41c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7789df49301a9ad6616d3d19f560736') in 0.007399 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 419.164702 seconds.
+  path: Assets/HQ Hangar Free/Prefabs
+  artifactKey: Guid(5d5be74c01d368c42bdc033b7b966bdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HQ Hangar Free/Prefabs using Guid(5d5be74c01d368c42bdc033b7b966bdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c12325e206c48adba4426db3a7673f57') in 0.006760 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.057383 seconds.
+  path: Assets/HQ Hangar Free/Prefabs/Floor.prefab
+  artifactKey: Guid(87fbfc3224b1b454cb612fc112128a39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HQ Hangar Free/Prefabs/Floor.prefab using Guid(87fbfc3224b1b454cb612fc112128a39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bfb01f584f6593e07723d8d8f46e586') in 0.022526 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/HQ Hangar Free/Prefabs/Hangar_part_05.prefab
+  artifactKey: Guid(219d51f7f380a7f4093f3fd1215a118d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HQ Hangar Free/Prefabs/Hangar_part_05.prefab using Guid(219d51f7f380a7f4093f3fd1215a118d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42d275648ee7f6f9d6829f45abe04244') in 0.022625 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/HQ Hangar Free/Prefabs/Hangar_part_02.prefab
+  artifactKey: Guid(291c0ca312755dd46aa73682c956d4d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HQ Hangar Free/Prefabs/Hangar_part_02.prefab using Guid(291c0ca312755dd46aa73682c956d4d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28807d417ec237f837f4905fd879d150') in 0.018982 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.993919 seconds.
+  path: Assets/HQ Hangar Free/Models/Hangar_part_01.fbx
+  artifactKey: Guid(d08605b992248f948b207f9e2131d3cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HQ Hangar Free/Models/Hangar_part_01.fbx using Guid(d08605b992248f948b207f9e2131d3cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c65f64a2760a0957970365654d41b31d') in 0.036966 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/HQ Hangar Free/Models/Hangar_part_04.fbx
+  artifactKey: Guid(c64e0fe5c5b818b4caa57dbe73fba718) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HQ Hangar Free/Models/Hangar_part_04.fbx using Guid(c64e0fe5c5b818b4caa57dbe73fba718) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa5d9f784026f0c12ed3647fd48e4bdb') in 0.021517 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.185566 seconds.
+  path: Assets/HQ Hangar Free/Textures/Concrete_floor
+  artifactKey: Guid(117fd51f376539941a6b691e16263457) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HQ Hangar Free/Textures/Concrete_floor using Guid(117fd51f376539941a6b691e16263457) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1edafdfbcf027ed2b6c5e636d1b04731') in 0.007471 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.046898 seconds.
+  path: Assets/HQ Hangar Free/Textures/Concrete_floor/Concrete_floor_smooth_BaseMap.png
+  artifactKey: Guid(a43c5d7d690fc714aa33b31bee75ea75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HQ Hangar Free/Textures/Concrete_floor/Concrete_floor_smooth_BaseMap.png using Guid(a43c5d7d690fc714aa33b31bee75ea75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88029a6365460113cc0cacaadc6b951b') in 0.019895 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 34.750051 seconds.
+  path: Assets/HQ Hangar Free/Models/First Hanger.fbx
+  artifactKey: Guid(d08605b992248f948b207f9e2131d3cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HQ Hangar Free/Models/First Hanger.fbx using Guid(d08605b992248f948b207f9e2131d3cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '094d5910e99ab756e4ce1028531380df') in 0.082406 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.568015 seconds.
+  path: Assets/HQ Hangar Free/Models/Second Hanger.fbx
+  artifactKey: Guid(2b88f6c715b28c14287c01b9536ada06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HQ Hangar Free/Models/Second Hanger.fbx using Guid(2b88f6c715b28c14287c01b9536ada06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11c8e37241d38935560a845721e17d1b') in 0.052401 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.857049 seconds.
+  path: Assets/HQ Hangar Free/Models/Three Hanger.fbx
+  artifactKey: Guid(eba32488b0945284782f635422a29933) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HQ Hangar Free/Models/Three Hanger.fbx using Guid(eba32488b0945284782f635422a29933) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be3500fbb2ea6755725798e11a9af715') in 0.061320 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.001685 seconds.
+  path: Assets/HQ Hangar Free/Models/Fourth Hanger.fbx
+  artifactKey: Guid(c64e0fe5c5b818b4caa57dbe73fba718) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HQ Hangar Free/Models/Fourth Hanger.fbx using Guid(c64e0fe5c5b818b4caa57dbe73fba718) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34307bfea58072b5f5b3052a764f15c1') in 0.050230 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.795024 seconds.
+  path: Assets/HQ Hangar Free/Models/Five Hanaer.fbx
+  artifactKey: Guid(8fdf8ee6372027f47ad9727f006fc763) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HQ Hangar Free/Models/Five Hanaer.fbx using Guid(8fdf8ee6372027f47ad9727f006fc763) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '776f7cf387beaba12d5477fe6c9ed7f6') in 0.106322 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.218294 seconds.
+  path: Assets/HQ Hangar Free/Models/Fifth Hanaer.fbx
+  artifactKey: Guid(8fdf8ee6372027f47ad9727f006fc763) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HQ Hangar Free/Models/Fifth Hanaer.fbx using Guid(8fdf8ee6372027f47ad9727f006fc763) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4bcb955d273d5bf10eae6c09bdc6adc') in 0.113706 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.623208 seconds.
+  path: Assets/HQ Hangar Free/Textures/Sheet_metal/Sheet_metal_BaseMap.png
+  artifactKey: Guid(b1248c8594497c5499daafb662e3be61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HQ Hangar Free/Textures/Sheet_metal/Sheet_metal_BaseMap.png using Guid(b1248c8594497c5499daafb662e3be61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce64cb690f1922007affca3b14a4404e') in 0.012757 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.356473 seconds.
+  path: Assets/HQ Hangar Free/Textures/Metals_trim/Metals_trim_Metals_trim_BaseMap.png
+  artifactKey: Guid(a56baf2c4938da94184fff358d409002) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HQ Hangar Free/Textures/Metals_trim/Metals_trim_Metals_trim_BaseMap.png using Guid(a56baf2c4938da94184fff358d409002) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b44e501d70bd31619037f52cbc47287e') in 0.012869 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.793067 seconds.
+  path: Assets/HQ Hangar Free/Prefabs/Hangar_part_01.prefab
+  artifactKey: Guid(4fbefc7b93407ce4c9601f64d1bf35a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HQ Hangar Free/Prefabs/Hangar_part_01.prefab using Guid(4fbefc7b93407ce4c9601f64d1bf35a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83efc56a1a12df75967fd6861f7c1205') in 0.016337 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/HQ Hangar Free/Prefabs/Hangar_part_05.prefab
+  artifactKey: Guid(219d51f7f380a7f4093f3fd1215a118d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HQ Hangar Free/Prefabs/Hangar_part_05.prefab using Guid(219d51f7f380a7f4093f3fd1215a118d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00ca8ff5b42a93823832dfdc826c554d') in 0.042313 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/HQ Hangar Free/Prefabs/Hangar_part_03.prefab
+  artifactKey: Guid(5b8a7ba67a2fe244b9233063b154d924) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HQ Hangar Free/Prefabs/Hangar_part_03.prefab using Guid(5b8a7ba67a2fe244b9233063b154d924) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '428d2f29fa8493ce0aef1449ed14df42') in 0.012622 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 56.962516 seconds.
+  path: Assets/HQ Hangar Free/Materials/Concret_floor_wet.mat
+  artifactKey: Guid(be21f5838915e1041896868ceeffc3c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HQ Hangar Free/Materials/Concret_floor_wet.mat using Guid(be21f5838915e1041896868ceeffc3c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e07314239ef78cf941a8bf5ecc35ce2') in 0.015359 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/HQ Hangar Free/Materials/Metals_trim.mat
+  artifactKey: Guid(b6ea9ca3819cebc42a9e3d2ac2893913) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HQ Hangar Free/Materials/Metals_trim.mat using Guid(b6ea9ca3819cebc42a9e3d2ac2893913) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3de0a542100df575459f17f4814e3874') in 0.055069 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 38.065138 seconds.
+  path: Assets/HQ Hangar Free/Textures/Glass/Glass_BaseMap.png
+  artifactKey: Guid(23b1a8391c3f62540a0506ed9428fb2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HQ Hangar Free/Textures/Glass/Glass_BaseMap.png using Guid(23b1a8391c3f62540a0506ed9428fb2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'daa5776bd26455e72dfa53d2a29b27ca') in 0.014652 seconds 
