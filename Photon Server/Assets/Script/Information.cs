@@ -1,20 +1,23 @@
 using Photon.Pun;
 using UnityEngine.UI;
+using TMPro;
+using UnityEngine;
 
 public class Information : MonoBehaviourPunCallbacks
 {
-    public Text roomData;
-    private string roomName;
+    public TextMeshProUGUI roomInformation;
 
-    public void OnClickJoinRoom()
+    public void ConnectRoom()
     {
-        PhotonNetwork.JoinRoom(roomName);
+        PhotonNetwork.JoinRoom(roomInformation.text);
     }
 
-    public void SetInfo(string Name, int Currecnt, int Max)
+    public void RoomData(string name, int currentStaff, int maxStaff)
     {
-        roomName = Name;
-        roomData.text = Name + " ( "+ Currecnt + " / " + Max + ")";
+        roomInformation.fontSize = 50;
+        roomInformation.color = Color.black;
+        roomInformation.alignment = TextAlignmentOptions.Center;
+        roomInformation.text = name + " ( "+ currentStaff + " / " + maxStaff + ")";
     }
 }
 

@@ -432,6 +432,7 @@
 "Assets/Script/ConnectServer.cs"
 "Assets/Script/GameManager.cs"
 "Assets/Script/Information.cs"
+"Assets/Script/NickName.cs"
 "Assets/Script/PhotonPlayer.cs"
 "Assets/Script/PlayfabManager.cs"
 "Assets/Script/RoomManager.cs"
