@@ -391,7 +391,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &347031202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1069,10 +1069,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e931dea17a01b354da569bdb33b13aa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomButton: {fileID: 352464454}
-  roomName: {fileID: 1588679643}
-  roomPerson: {fileID: 1071818886}
-  roomContent: {fileID: 48894415}
+  roomTitleInputField: {fileID: 0}
+  roomCapacityInputField: {fileID: 0}
+  contentTransform: {fileID: 0}
 --- !u!4 &612203200
 Transform:
   m_ObjectHideFlags: 0
@@ -1086,7 +1085,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &615951689
 GameObject:
@@ -3466,7 +3465,7 @@ RectTransform:
   - {fileID: 1588679642}
   - {fileID: 763879343}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3483,8 +3482,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1966647679}
   - component: {fileID: 1966647678}
+  - component: {fileID: 1966647680}
   m_Layer: 0
-  m_Name: Server Manager
+  m_Name: Lobbby Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3502,6 +3502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4edfcf8f845d68647bac9669a09a485c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pvCache: {fileID: 0}
   canvasRoom: {fileID: 347031204}
   canvasLobby: {fileID: 1873288957}
   server: {fileID: 398346052}
@@ -3518,8 +3519,22 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1966647680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966647677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 993f7d21998672245ba6b1f5397488d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropdown: {fileID: 0}
+  lobbyCanvas: {fileID: 0}
 --- !u!1 &2015335049
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,103 +2,80 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
-using Photon.Realtime; // ?´ëŠ ?œë²„???‘ì†?ˆì„ ???´ë²¤?¸ë? ?¸ì¶œ?˜ëŠ” ?¼ì´ë¸ŒëŸ¬ë¦?
+using Photon.Realtime;
 
 public class RoomManager : MonoBehaviourPunCallbacks
 {
-    public Button roomButton;
-    public InputField roomName;
-    public InputField roomPerson;
-    public Transform roomContent;
+    [SerializeField] InputField roomTitleInputField;
+    [SerializeField] InputField roomCapacityInputField;
 
-    // ë£?ëª©ë¡???€?¥í•˜ê¸??„í•œ ?ë£Œêµ¬ì¡°
-    Dictionary<string, RoomInfo> roomDictionary = new Dictionary<string, RoomInfo>();
+    [SerializeField] Transform contentTransform;
 
-    void Update()
-    {
-        if(roomName.text.Length > 0 && roomPerson.text.Length > 0)
-            roomButton.interactable = true;
-        else
-            roomButton.interactable = false;
-    }
+    private Dictionary<string, GameObject> dictionary = new Dictionary<string, GameObject>();
 
-    // ë£¸ì— ?…ì¥?????¸ì¶œ?˜ëŠ” ì½œë°± ?¨ìˆ˜
     public override void OnJoinedRoom()
     {
-        PhotonNetwork.LoadLevel("Photon Game");
+        PhotonNetwork.LoadLevel("Game Scene");
     }
 
-    public void OnClickCreateRoom()
+    public void OnCreateRoom()
     {
-        // ë£??µì…˜???¤ì •?©ë‹ˆ??
-        RoomOptions Room = new RoomOptions();
+        RoomOptions roomOptions = new RoomOptions();
 
-        // ìµœë? ?‘ì†?ì˜ ?˜ë? ?¤ì •?©ë‹ˆ??
-        Room.MaxPlayers = byte.Parse(roomPerson.text);
+        roomOptions.MaxPlayers = byte.Parse(roomCapacityInputField.text);
 
-        // ë£¸ì˜ ?¤í”ˆ ?¬ë?ë¥??¤ì •?©ë‹ˆ??
-        Room.IsOpen = true;
+        roomOptions.IsOpen = true;
 
-        // ë¡œë¹„?ì„œ ë£?ëª©ë¡???¸ì¶œ ?œí‚¬ì§€ ?¤ì •?©ë‹ˆ??
-        Room.IsVisible = true;
+        roomOptions.IsVisible = true;
 
-        // ë£¸ì„ ?ì„±?˜ëŠ” ?¨ìˆ˜
-        PhotonNetwork.CreateRoom(roomName.text, Room);
+        PhotonNetwork.CreateRoom(roomTitleInputField.text, roomOptions);
     }
 
-    // ?´ë‹¹ ë¡œë¹„??ë°?ëª©ë¡??ë³€ê²??¬í•­???ˆìœ¼ë©??¸ì¶œ(ì¶”ê?, ?? œ, ì°¸ê?)
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
-        RemoveRoom();
-        UpdateRoom(roomList);
-        CreateRoomObject();
-    }
+        GameObject temporaryRoom;
 
-    void UpdateRoom(List<RoomInfo> roomList)
-    {
-        for (int i = 0; i < roomList.Count; i++)
+        foreach (RoomInfo room in roomList)
         {
-            // ?´ë‹¹ ?´ë¦„??RoomCatalog??key ê°’ìœ¼ë¡??¤ì •?˜ì–´ ?ˆë‹¤ë©?
-            if (roomDictionary.ContainsKey(roomList[i].Name))
+            // ·ëÀÌ »èÁ¦µÈ °æ¿ì
+            if (room.RemovedFromList == true)
             {
-                // RemovedFromList : (true) ë£¸ì—???? œê°€ ?˜ì—ˆ????
-                if (roomList[i].RemovedFromList)
+                dictionary.TryGetValue(room.Name, out temporaryRoom);
+
+                Destroy(temporaryRoom);
+
+                dictionary.Remove(room.Name);
+            }
+            else // ·ëÀÇ Á¤º¸°¡ º¯°æµÇ´Â °æ¿ì
+            {
+                // ·ëÀÌ Ã³À½ »ı¼ºµÇ´Â °æ¿ì
+                if (dictionary.ContainsKey(room.Name) == false)
                 {
-                    roomDictionary.Remove(roomList[i].Name);
+                    GameObject roomObject = Instantiate(Resources.Load<GameObject>("Room"), contentTransform);
+
+                    roomObject.GetComponent<Information>().SetData
+                    (
+                        room.Name,
+                        room.PlayerCount,
+                        room.MaxPlayers
+                    );
+
+                    dictionary.Add(room.Name, roomObject);
                 }
-                else
+                else // ·ëÀÇ Á¤º¸°¡ º¯°æµÇ´Â °æ¿ì
                 {
-                    roomDictionary[roomList[i].Name] = roomList[i];
+                    dictionary.TryGetValue(room.Name, out temporaryRoom);
+
+                    temporaryRoom.GetComponent<Information>().SetData
+                    (
+                        room.Name,
+                        room.PlayerCount,
+                        room.MaxPlayers
+                    );
                 }
             }
-            else
-            {
-                roomDictionary[roomList[i].Name] = roomList[i];
-            }
+
         }
-    }
 
-    public void RemoveRoom()
-    {
-        foreach(Transform room in roomContent)
-        {
-            Destroy(room.gameObject);
-        }
-    }
-
-    public void CreateRoomObject()
-    {
-        // RoomCatalog???¬ëŸ¬ ê°œì˜ Valueê°’ì´ ?¤ì–´ê°€?ˆë‹¤ë©?RoomInfo???£ì–´ì¤ë‹ˆ??
-        foreach (RoomInfo info in roomDictionary.Values)
-        {
-            // ë£¸ì„ ?ì„±?©ë‹ˆ??
-            GameObject room = Instantiate(Resources.Load<GameObject>("Room"));
-
-            // RoomContect???˜ìœ„ ?¤ë¸Œ?íŠ¸ë¡??¤ì •?©ë‹ˆ??
-            room.transform.SetParent(roomContent);
-
-            // ë£??•ë³´ë¥??…ë ¥?©ë‹ˆ??
-            room.GetComponent<Information>().RoomData(info.Name, info.PlayerCount, info.MaxPlayers);
-        }
     }
 }

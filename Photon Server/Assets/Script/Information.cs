@@ -5,19 +5,20 @@ using UnityEngine;
 
 public class Information : MonoBehaviourPunCallbacks
 {
-    public TextMeshProUGUI roomInformation;
+    private string roomTitle;
 
-    public void ConnectRoom()
+    [SerializeField] Text roomTitleText;
+
+    public void OnConnectRoom()
     {
-        PhotonNetwork.JoinRoom(roomInformation.text);
+        PhotonNetwork.JoinRoom(roomTitle);
     }
 
-    public void RoomData(string name, int currentStaff, int maxStaff)
+    public void SetData(string name, int currentStaff, int maxStaff)
     {
-        roomInformation.fontSize = 50;
-        roomInformation.color = Color.black;
-        roomInformation.alignment = TextAlignmentOptions.Center;
-        roomInformation.text = name + " ( "+ currentStaff + " / " + maxStaff + ")";
+        roomTitle = name;
+
+        roomTitleText.text = roomTitle + " ( " + currentStaff + " / " + maxStaff + " )";
     }
 }
 
