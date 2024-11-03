@@ -20,7 +20,7 @@ public class PlayfabManager : MonoBehaviourPunCallbacks
 
     public void Success(RegisterPlayFabUserResult result)
     {
-        Alarm.Show(result.ToString(), AlarmType.Alarm);
+       
     }
 
     public void SignUp()
@@ -59,6 +59,6 @@ public class PlayfabManager : MonoBehaviourPunCallbacks
 
     public void Failure(PlayFabError error)
     {
-        Alarm.Show(error.GenerateErrorReport(), AlarmType.Alarm);
+       
     }
 }

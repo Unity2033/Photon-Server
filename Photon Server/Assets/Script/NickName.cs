@@ -1,20 +1,17 @@
 using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using UnityEngine;
+using UnityEngine.UI;
 
 public class NickName : MonoBehaviourPunCallbacks
 {
-    public TextMeshProUGUI nickName;
+    public Text nickName;
 
     void Start()
     {
-        nickName.text = photonView.Owner.NickName;      
+        nickName.text = photonView.Owner.NickName;
     }
 
     void Update()
     {
-        transform.forward = Camera.main.transform.forward;
+       
     }
 }
