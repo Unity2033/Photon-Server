@@ -14,6 +14,8 @@ public class Pause : MonoBehaviourPunCallbacks
 
     public void Exit()
     {
+        gameObject.SetActive(false);
+
         PhotonNetwork.LeaveRoom();
     }
 
